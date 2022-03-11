@@ -123,13 +123,18 @@ class MarketplaceViewController: UIViewController, UITableViewDataSource, UITabl
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let all:[All] = bankData!.all
-        return all.count//testData.count
+        let top3:[All] = bankData!.top3
+        return all.count + top3.count//testData.count
     }
     
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         let all:[All] = bankData!.all
-        let id = all[indexPath.item].id
+        let top3:[All] = bankData!.top3
+        
+        let allall = top3 + all
+        
+        let id = allall[indexPath.item].id
         if(id == indexSelected){
             return 350
         }else{
@@ -154,9 +159,12 @@ class MarketplaceViewController: UIViewController, UITableViewDataSource, UITabl
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let all:[All] = bankData!.all
-        let model = all[indexPath.row].lenderCompanyicon
-        let id = all[indexPath.row].id
-        let listBank = all[indexPath.row].lenderName
+        let top3:[All] = bankData!.top3
+        
+        let allall = top3 + all
+        let model = allall[indexPath.row].lenderCompanyicon
+        let id = allall[indexPath.row].id
+        let listBank = allall[indexPath.row].lenderName
         let cell = tableView.dequeueReusableCell(withIdentifier: "marketplaceCell") as! MarketplaceTableViewCell
         cell.setModel(urlBankIcon: model!,id: id!,isExapanded: (id == indexSelected) ? true : false, listBank: listBank!)
         cell.delegate = self

@@ -93,7 +93,7 @@ public class C60SSDK_START: UIViewController {
                 let storyBoard: UIStoryboard = UIStoryboard(name: "SurveyFlow", bundle: matches.last!)
                 let balanceViewController = storyBoard.instantiateViewController(withIdentifier: "CreditTypeTableIdentifier") as! CreditTypeTableViewController
                 balanceViewController.sessionID = sessionID
-                vc.show(balanceViewController, sender: nil)
+                vc.present(balanceViewController, animated: true)
                 //self.performSegue(withIdentifier: "seguestart", sender: nil)
                 //return balanceViewController
             }else{
@@ -101,7 +101,7 @@ public class C60SSDK_START: UIViewController {
                 let storyBoard: UIStoryboard = UIStoryboard(name: "SurveyFlow", bundle: nil)
                 let balanceViewController = storyBoard.instantiateViewController(withIdentifier: "CreditTypeTableIdentifier") as! CreditTypeTableViewController
                 balanceViewController.sessionID = sessionID
-                vc.show(balanceViewController, sender: nil)
+                vc.present(balanceViewController, animated: true)
                 //return balanceViewController
             }
         }else{

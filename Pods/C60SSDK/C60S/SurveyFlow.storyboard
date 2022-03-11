@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -1041,11 +1041,19 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="H00-2T-LhS">
+                                <rect key="frame" x="161" y="730" width="92" height="64"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="ien-yN-Kxm"/>
+                                </constraints>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="2bL-zh-WQC"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="H00-2T-LhS" firstAttribute="leading" secondItem="2bL-zh-WQC" secondAttribute="leading" constant="161" id="2GB-rn-UIU"/>
                             <constraint firstItem="e3p-gn-Ffe" firstAttribute="leading" secondItem="2bL-zh-WQC" secondAttribute="leading" constant="70" id="5Jy-ZF-SYF"/>
+                            <constraint firstItem="2bL-zh-WQC" firstAttribute="trailing" secondItem="H00-2T-LhS" secondAttribute="trailing" constant="161" id="6GX-kl-iDq"/>
                             <constraint firstItem="447-eq-8Uh" firstAttribute="top" secondItem="oKQ-Jd-UHO" secondAttribute="top" id="7Ml-zP-0B7"/>
                             <constraint firstAttribute="trailing" secondItem="tNj-GR-O1r" secondAttribute="trailing" constant="20" id="7RY-cD-SQK"/>
                             <constraint firstItem="e3p-gn-Ffe" firstAttribute="top" secondItem="2bL-zh-WQC" secondAttribute="top" constant="150" id="F0w-RU-BXh"/>
@@ -1053,6 +1061,7 @@
                             <constraint firstItem="tNj-GR-O1r" firstAttribute="centerY" secondItem="oKQ-Jd-UHO" secondAttribute="centerY" id="MGr-Pf-2tp"/>
                             <constraint firstItem="2bL-zh-WQC" firstAttribute="trailing" secondItem="e3p-gn-Ffe" secondAttribute="trailing" constant="70" id="Qc5-wj-RY8"/>
                             <constraint firstItem="tNj-GR-O1r" firstAttribute="top" secondItem="e3p-gn-Ffe" secondAttribute="bottom" constant="70" id="Zve-qu-ZzS"/>
+                            <constraint firstItem="2bL-zh-WQC" firstAttribute="bottom" secondItem="H00-2T-LhS" secondAttribute="bottom" constant="68" id="fRx-vS-xN9"/>
                             <constraint firstAttribute="bottom" secondItem="447-eq-8Uh" secondAttribute="bottom" id="oJe-kb-quT"/>
                             <constraint firstItem="447-eq-8Uh" firstAttribute="leading" secondItem="2bL-zh-WQC" secondAttribute="leading" id="tcu-1p-XhQ"/>
                             <constraint firstItem="2bL-zh-WQC" firstAttribute="trailing" secondItem="447-eq-8Uh" secondAttribute="trailing" id="zeP-go-hOX"/>
@@ -1060,12 +1069,13 @@
                     </view>
                     <navigationItem key="navigationItem" id="7zY-ta-Vy4"/>
                     <connections>
+                        <outlet property="progressCustom" destination="H00-2T-LhS" id="NHE-MJ-XTx"/>
                         <segue destination="I5M-cj-wmK" kind="show" identifier="marketplaceSegue" id="0ii-dZ-ovV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="usr-Vc-6p0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5612" y="-599"/>
+            <point key="canvasLocation" x="5611.594202898551" y="-599.33035714285711"/>
         </scene>
         <!--Sparky2 View Controller-->
         <scene sceneID="e3w-Fl-s5H">

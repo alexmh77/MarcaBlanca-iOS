@@ -96,7 +96,7 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   C60SSDK:
-    :commit: 1700631953e5be3219059a1331a6f300ef7316af
+    :commit: 8b54079f8e837df033b74dace72ec790b512ebf2
     :git: https://github.com/Soluciones-de-Buro-Moviles-S-A-de-C-V/C60S-iOS.git
 
 SPEC CHECKSUMS:

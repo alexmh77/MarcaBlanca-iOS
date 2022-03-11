@@ -17,11 +17,14 @@ class Sparky1ViewController: UIViewController,dismissScreenDelegate {
     
     
     let scsRequests = SCSRequests()
+    @IBOutlet weak var progressCustom: UIActivityIndicatorView!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
         overrideUserInterfaceStyle = .light
-        ProgressHUD.show()
+        progressCustom.startAnimating()
+        //ProgressHUD.show()
         // Do any additional setup after loading the view.
         
         if #available(iOS 15.0, *) {
@@ -41,7 +44,8 @@ class Sparky1ViewController: UIViewController,dismissScreenDelegate {
                             let bankList: Listing = response!
                             DispatchQueue.main.async() {
                                 // your code here
-                                ProgressHUD.dismiss()
+                                self.progressCustom.stopAnimating()
+                                //ProgressHUD.dismiss()
                                 self.performSegue(withIdentifier: "marketplaceSegue", sender: bankList)
                             }
                         }else{
