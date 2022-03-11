@@ -1,0 +1,8 @@
+${PODS_ROOT}/Target Support Files/C60SSDK/C60SSDK-xcframeworks.sh
+${PODS_ROOT}/C60SSDK/SCSSDKiOS.xcframework
+${PODS_ROOT}/C60SSDK/CredoAppMusic.xcframework
+${PODS_ROOT}/C60SSDK/CredoAppMedia.xcframework
+${PODS_ROOT}/C60SSDK/CredoAppCore.xcframework
+${PODS_ROOT}/C60SSDK/CredoAppContacts.xcframework
+${PODS_ROOT}/C60SSDK/CredoAppCalendarReminders.xcframework
+${PODS_ROOT}/C60SSDK/CredoAppCalendarEvents.xcframework

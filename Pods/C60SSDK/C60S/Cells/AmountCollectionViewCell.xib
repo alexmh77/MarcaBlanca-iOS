@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="AmountCollectionViewCell" id="gTV-IL-0wX" customClass="AmountCollectionViewCell" customModule="C60S" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="185" height="85"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="185" height="85"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ixb-jW-li5">
+                        <rect key="frame" x="15" y="10" width="155" height="65"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$500" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zBe-06-Mkg">
+                                <rect key="frame" x="46.5" y="14.5" width="62" height="36"/>
+                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="26"/>
+                                <color key="textColor" name="AppBlueColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="zBe-06-Mkg" firstAttribute="centerX" secondItem="Ixb-jW-li5" secondAttribute="centerX" id="Kt5-oJ-ZJg"/>
+                            <constraint firstItem="zBe-06-Mkg" firstAttribute="centerY" secondItem="Ixb-jW-li5" secondAttribute="centerY" id="sC7-tG-bDn"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="Ixb-jW-li5" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="10" id="N0t-Gg-f7Z"/>
+                <constraint firstAttribute="trailing" secondItem="Ixb-jW-li5" secondAttribute="trailing" constant="15" id="f7Q-li-3fG"/>
+                <constraint firstItem="Ixb-jW-li5" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="15" id="lfW-jW-rpL"/>
+                <constraint firstAttribute="bottom" secondItem="Ixb-jW-li5" secondAttribute="bottom" constant="10" id="zDW-cD-QDa"/>
+            </constraints>
+            <size key="customSize" width="185" height="85"/>
+            <connections>
+                <outlet property="amountLabel" destination="zBe-06-Mkg" id="3ux-Vg-dTz"/>
+                <outlet property="card" destination="Ixb-jW-li5" id="MF4-d1-6Xr"/>
+            </connections>
+            <point key="canvasLocation" x="-290.57971014492756" y="8.3705357142857135"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <namedColor name="AppBlueColor">
+            <color red="0.14499999582767487" green="0.20399999618530273" blue="0.37299999594688416" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

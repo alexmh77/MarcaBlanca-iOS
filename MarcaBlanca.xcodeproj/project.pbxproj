@@ -1,0 +1,771 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		16C9834E828FC2183CD4662B /* Pods_MarcaBlanca.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BAE850D0F720F4D7D260D2B /* Pods_MarcaBlanca.framework */; };
+		6D68BD6A9C6EDA0FA89C256E /* Pods_MarcaBlanca_MarcaBlancaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 094821C2E52F5D09820646F0 /* Pods_MarcaBlanca_MarcaBlancaUITests.framework */; };
+		AF0B97B027C2D09D0037B3BA /* amplifyconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = AF0B97AF27C2D09D0037B3BA /* amplifyconfiguration.json */; };
+		AF44AB7B27C00CB00084D749 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF44AB7A27C00CB00084D749 /* AppDelegate.swift */; };
+		AF44AB7D27C00CB00084D749 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF44AB7C27C00CB00084D749 /* SceneDelegate.swift */; };
+		AF44AB7F27C00CB00084D749 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF44AB7E27C00CB00084D749 /* ViewController.swift */; };
+		AF44AB8227C00CB00084D749 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF44AB8027C00CB00084D749 /* Main.storyboard */; };
+		AF44AB8427C00CB10084D749 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF44AB8327C00CB10084D749 /* Assets.xcassets */; };
+		AF44AB8727C00CB10084D749 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF44AB8527C00CB10084D749 /* LaunchScreen.storyboard */; };
+		AF44AB9227C00CB10084D749 /* MarcaBlancaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF44AB9127C00CB10084D749 /* MarcaBlancaTests.swift */; };
+		AF44AB9C27C00CB10084D749 /* MarcaBlancaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF44AB9B27C00CB10084D749 /* MarcaBlancaUITests.swift */; };
+		AF44AB9E27C00CB10084D749 /* MarcaBlancaUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF44AB9D27C00CB10084D749 /* MarcaBlancaUITestsLaunchTests.swift */; };
+		FF14383D2BC4A7D41830FDD7 /* Pods_MarcaBlancaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9B55EA52D438B3A8FD9DA0E /* Pods_MarcaBlancaTests.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		AF44AB8E27C00CB10084D749 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AF44AB6F27C00CB00084D749 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AF44AB7627C00CB00084D749;
+			remoteInfo = MarcaBlanca;
+		};
+		AF44AB9827C00CB10084D749 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AF44AB6F27C00CB00084D749 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AF44AB7627C00CB00084D749;
+			remoteInfo = MarcaBlanca;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		094821C2E52F5D09820646F0 /* Pods_MarcaBlanca_MarcaBlancaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MarcaBlanca_MarcaBlancaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		117B3E680A58EC941625E329 /* Pods-MarcaBlanca-MarcaBlancaUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarcaBlanca-MarcaBlancaUITests.debug.xcconfig"; path = "Target Support Files/Pods-MarcaBlanca-MarcaBlancaUITests/Pods-MarcaBlanca-MarcaBlancaUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		24E5BFDC541BA6B1F180E54A /* Pods-MarcaBlanca.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarcaBlanca.debug.xcconfig"; path = "Target Support Files/Pods-MarcaBlanca/Pods-MarcaBlanca.debug.xcconfig"; sourceTree = "<group>"; };
+		5F9A0C7DC92EAD4C5D6B028E /* Pods-MarcaBlancaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarcaBlancaTests.release.xcconfig"; path = "Target Support Files/Pods-MarcaBlancaTests/Pods-MarcaBlancaTests.release.xcconfig"; sourceTree = "<group>"; };
+		61A04933C42BAC246BAAA794 /* Pods-MarcaBlancaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarcaBlancaTests.debug.xcconfig"; path = "Target Support Files/Pods-MarcaBlancaTests/Pods-MarcaBlancaTests.debug.xcconfig"; sourceTree = "<group>"; };
+		6BAE850D0F720F4D7D260D2B /* Pods_MarcaBlanca.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MarcaBlanca.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9010F035E0323855AF65F3D2 /* Pods-MarcaBlanca.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarcaBlanca.release.xcconfig"; path = "Target Support Files/Pods-MarcaBlanca/Pods-MarcaBlanca.release.xcconfig"; sourceTree = "<group>"; };
+		AF0B97AF27C2D09D0037B3BA /* amplifyconfiguration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = amplifyconfiguration.json; path = "../../C60S-iOS/amplifyconfiguration.json"; sourceTree = "<group>"; };
+		AF44AB7727C00CB00084D749 /* MarcaBlanca.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MarcaBlanca.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AF44AB7A27C00CB00084D749 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		AF44AB7C27C00CB00084D749 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		AF44AB7E27C00CB00084D749 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		AF44AB8127C00CB00084D749 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		AF44AB8327C00CB10084D749 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AF44AB8627C00CB10084D749 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		AF44AB8827C00CB10084D749 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AF44AB8D27C00CB10084D749 /* MarcaBlancaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MarcaBlancaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AF44AB9127C00CB10084D749 /* MarcaBlancaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarcaBlancaTests.swift; sourceTree = "<group>"; };
+		AF44AB9727C00CB10084D749 /* MarcaBlancaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MarcaBlancaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AF44AB9B27C00CB10084D749 /* MarcaBlancaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarcaBlancaUITests.swift; sourceTree = "<group>"; };
+		AF44AB9D27C00CB10084D749 /* MarcaBlancaUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarcaBlancaUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		D6DA670F73B51E1D103CF079 /* Pods-MarcaBlanca-MarcaBlancaUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarcaBlanca-MarcaBlancaUITests.release.xcconfig"; path = "Target Support Files/Pods-MarcaBlanca-MarcaBlancaUITests/Pods-MarcaBlanca-MarcaBlancaUITests.release.xcconfig"; sourceTree = "<group>"; };
+		E9B55EA52D438B3A8FD9DA0E /* Pods_MarcaBlancaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MarcaBlancaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AF44AB7427C00CB00084D749 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				16C9834E828FC2183CD4662B /* Pods_MarcaBlanca.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AF44AB8A27C00CB10084D749 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FF14383D2BC4A7D41830FDD7 /* Pods_MarcaBlancaTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AF44AB9427C00CB10084D749 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6D68BD6A9C6EDA0FA89C256E /* Pods_MarcaBlanca_MarcaBlancaUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3172E5F019F7F3522CA75023 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				24E5BFDC541BA6B1F180E54A /* Pods-MarcaBlanca.debug.xcconfig */,
+				9010F035E0323855AF65F3D2 /* Pods-MarcaBlanca.release.xcconfig */,
+				117B3E680A58EC941625E329 /* Pods-MarcaBlanca-MarcaBlancaUITests.debug.xcconfig */,
+				D6DA670F73B51E1D103CF079 /* Pods-MarcaBlanca-MarcaBlancaUITests.release.xcconfig */,
+				61A04933C42BAC246BAAA794 /* Pods-MarcaBlancaTests.debug.xcconfig */,
+				5F9A0C7DC92EAD4C5D6B028E /* Pods-MarcaBlancaTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		603CD772938D1C8FE6567984 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6BAE850D0F720F4D7D260D2B /* Pods_MarcaBlanca.framework */,
+				094821C2E52F5D09820646F0 /* Pods_MarcaBlanca_MarcaBlancaUITests.framework */,
+				E9B55EA52D438B3A8FD9DA0E /* Pods_MarcaBlancaTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AF44AB6E27C00CB00084D749 = {
+			isa = PBXGroup;
+			children = (
+				AF44AB7927C00CB00084D749 /* MarcaBlanca */,
+				AF44AB9027C00CB10084D749 /* MarcaBlancaTests */,
+				AF44AB9A27C00CB10084D749 /* MarcaBlancaUITests */,
+				AF44AB7827C00CB00084D749 /* Products */,
+				3172E5F019F7F3522CA75023 /* Pods */,
+				603CD772938D1C8FE6567984 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		AF44AB7827C00CB00084D749 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AF44AB7727C00CB00084D749 /* MarcaBlanca.app */,
+				AF44AB8D27C00CB10084D749 /* MarcaBlancaTests.xctest */,
+				AF44AB9727C00CB10084D749 /* MarcaBlancaUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AF44AB7927C00CB00084D749 /* MarcaBlanca */ = {
+			isa = PBXGroup;
+			children = (
+				AF0B97AF27C2D09D0037B3BA /* amplifyconfiguration.json */,
+				AF44AB7A27C00CB00084D749 /* AppDelegate.swift */,
+				AF44AB7C27C00CB00084D749 /* SceneDelegate.swift */,
+				AF44AB7E27C00CB00084D749 /* ViewController.swift */,
+				AF44AB8027C00CB00084D749 /* Main.storyboard */,
+				AF44AB8327C00CB10084D749 /* Assets.xcassets */,
+				AF44AB8527C00CB10084D749 /* LaunchScreen.storyboard */,
+				AF44AB8827C00CB10084D749 /* Info.plist */,
+			);
+			path = MarcaBlanca;
+			sourceTree = "<group>";
+		};
+		AF44AB9027C00CB10084D749 /* MarcaBlancaTests */ = {
+			isa = PBXGroup;
+			children = (
+				AF44AB9127C00CB10084D749 /* MarcaBlancaTests.swift */,
+			);
+			path = MarcaBlancaTests;
+			sourceTree = "<group>";
+		};
+		AF44AB9A27C00CB10084D749 /* MarcaBlancaUITests */ = {
+			isa = PBXGroup;
+			children = (
+				AF44AB9B27C00CB10084D749 /* MarcaBlancaUITests.swift */,
+				AF44AB9D27C00CB10084D749 /* MarcaBlancaUITestsLaunchTests.swift */,
+			);
+			path = MarcaBlancaUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AF44AB7627C00CB00084D749 /* MarcaBlanca */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AF44ABA127C00CB20084D749 /* Build configuration list for PBXNativeTarget "MarcaBlanca" */;
+			buildPhases = (
+				5802A0C2D48D78C9CE5541F4 /* [CP] Check Pods Manifest.lock */,
+				AF44AB7327C00CB00084D749 /* Sources */,
+				AF44AB7427C00CB00084D749 /* Frameworks */,
+				AF44AB7527C00CB00084D749 /* Resources */,
+				0E0DDD95D566576609A3A263 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MarcaBlanca;
+			productName = MarcaBlanca;
+			productReference = AF44AB7727C00CB00084D749 /* MarcaBlanca.app */;
+			productType = "com.apple.product-type.application";
+		};
+		AF44AB8C27C00CB10084D749 /* MarcaBlancaTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AF44ABA427C00CB20084D749 /* Build configuration list for PBXNativeTarget "MarcaBlancaTests" */;
+			buildPhases = (
+				C1AA4FCE6A6D25848A64F78D /* [CP] Check Pods Manifest.lock */,
+				AF44AB8927C00CB10084D749 /* Sources */,
+				AF44AB8A27C00CB10084D749 /* Frameworks */,
+				AF44AB8B27C00CB10084D749 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AF44AB8F27C00CB10084D749 /* PBXTargetDependency */,
+			);
+			name = MarcaBlancaTests;
+			productName = MarcaBlancaTests;
+			productReference = AF44AB8D27C00CB10084D749 /* MarcaBlancaTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		AF44AB9627C00CB10084D749 /* MarcaBlancaUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AF44ABA727C00CB20084D749 /* Build configuration list for PBXNativeTarget "MarcaBlancaUITests" */;
+			buildPhases = (
+				42F0A05326B3250801BCEB46 /* [CP] Check Pods Manifest.lock */,
+				AF44AB9327C00CB10084D749 /* Sources */,
+				AF44AB9427C00CB10084D749 /* Frameworks */,
+				AF44AB9527C00CB10084D749 /* Resources */,
+				85F15B24C531080B8D843A21 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AF44AB9927C00CB10084D749 /* PBXTargetDependency */,
+			);
+			name = MarcaBlancaUITests;
+			productName = MarcaBlancaUITests;
+			productReference = AF44AB9727C00CB10084D749 /* MarcaBlancaUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AF44AB6F27C00CB00084D749 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1320;
+				LastUpgradeCheck = 1320;
+				TargetAttributes = {
+					AF44AB7627C00CB00084D749 = {
+						CreatedOnToolsVersion = 13.2.1;
+					};
+					AF44AB8C27C00CB10084D749 = {
+						CreatedOnToolsVersion = 13.2.1;
+						TestTargetID = AF44AB7627C00CB00084D749;
+					};
+					AF44AB9627C00CB10084D749 = {
+						CreatedOnToolsVersion = 13.2.1;
+						TestTargetID = AF44AB7627C00CB00084D749;
+					};
+				};
+			};
+			buildConfigurationList = AF44AB7227C00CB00084D749 /* Build configuration list for PBXProject "MarcaBlanca" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = AF44AB6E27C00CB00084D749;
+			productRefGroup = AF44AB7827C00CB00084D749 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AF44AB7627C00CB00084D749 /* MarcaBlanca */,
+				AF44AB8C27C00CB10084D749 /* MarcaBlancaTests */,
+				AF44AB9627C00CB10084D749 /* MarcaBlancaUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AF44AB7527C00CB00084D749 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AF44AB8727C00CB10084D749 /* LaunchScreen.storyboard in Resources */,
+				AF44AB8427C00CB10084D749 /* Assets.xcassets in Resources */,
+				AF44AB8227C00CB00084D749 /* Main.storyboard in Resources */,
+				AF0B97B027C2D09D0037B3BA /* amplifyconfiguration.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AF44AB8B27C00CB10084D749 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AF44AB9527C00CB10084D749 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0E0DDD95D566576609A3A263 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MarcaBlanca/Pods-MarcaBlanca-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MarcaBlanca/Pods-MarcaBlanca-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MarcaBlanca/Pods-MarcaBlanca-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		42F0A05326B3250801BCEB46 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MarcaBlanca-MarcaBlancaUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5802A0C2D48D78C9CE5541F4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MarcaBlanca-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		85F15B24C531080B8D843A21 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MarcaBlanca-MarcaBlancaUITests/Pods-MarcaBlanca-MarcaBlancaUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MarcaBlanca-MarcaBlancaUITests/Pods-MarcaBlanca-MarcaBlancaUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MarcaBlanca-MarcaBlancaUITests/Pods-MarcaBlanca-MarcaBlancaUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C1AA4FCE6A6D25848A64F78D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MarcaBlancaTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AF44AB7327C00CB00084D749 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AF44AB7F27C00CB00084D749 /* ViewController.swift in Sources */,
+				AF44AB7B27C00CB00084D749 /* AppDelegate.swift in Sources */,
+				AF44AB7D27C00CB00084D749 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AF44AB8927C00CB10084D749 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AF44AB9227C00CB10084D749 /* MarcaBlancaTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AF44AB9327C00CB10084D749 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AF44AB9E27C00CB10084D749 /* MarcaBlancaUITestsLaunchTests.swift in Sources */,
+				AF44AB9C27C00CB10084D749 /* MarcaBlancaUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		AF44AB8F27C00CB10084D749 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AF44AB7627C00CB00084D749 /* MarcaBlanca */;
+			targetProxy = AF44AB8E27C00CB10084D749 /* PBXContainerItemProxy */;
+		};
+		AF44AB9927C00CB10084D749 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AF44AB7627C00CB00084D749 /* MarcaBlanca */;
+			targetProxy = AF44AB9827C00CB10084D749 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		AF44AB8027C00CB00084D749 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AF44AB8127C00CB00084D749 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		AF44AB8527C00CB10084D749 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AF44AB8627C00CB10084D749 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		AF44AB9F27C00CB20084D749 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_BITCODE = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		AF44ABA027C00CB20084D749 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_BITCODE = NO;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		AF44ABA227C00CB20084D749 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 24E5BFDC541BA6B1F180E54A /* Pods-MarcaBlanca.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5JA6W6Z6L2;
+				ENABLE_BITCODE = NO;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MarcaBlanca/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = MarcaBlanca;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = test.MarcaBlanca;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		AF44ABA327C00CB20084D749 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9010F035E0323855AF65F3D2 /* Pods-MarcaBlanca.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5JA6W6Z6L2;
+				ENABLE_BITCODE = NO;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MarcaBlanca/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = MarcaBlanca;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = test.MarcaBlanca;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		AF44ABA527C00CB20084D749 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 61A04933C42BAC246BAAA794 /* Pods-MarcaBlancaTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = test.MarcaBlancaTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MarcaBlanca.app/MarcaBlanca";
+			};
+			name = Debug;
+		};
+		AF44ABA627C00CB20084D749 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5F9A0C7DC92EAD4C5D6B028E /* Pods-MarcaBlancaTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = test.MarcaBlancaTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MarcaBlanca.app/MarcaBlanca";
+			};
+			name = Release;
+		};
+		AF44ABA827C00CB20084D749 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 117B3E680A58EC941625E329 /* Pods-MarcaBlanca-MarcaBlancaUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = test.MarcaBlancaUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = MarcaBlanca;
+			};
+			name = Debug;
+		};
+		AF44ABA927C00CB20084D749 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D6DA670F73B51E1D103CF079 /* Pods-MarcaBlanca-MarcaBlancaUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = test.MarcaBlancaUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = MarcaBlanca;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AF44AB7227C00CB00084D749 /* Build configuration list for PBXProject "MarcaBlanca" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AF44AB9F27C00CB20084D749 /* Debug */,
+				AF44ABA027C00CB20084D749 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AF44ABA127C00CB20084D749 /* Build configuration list for PBXNativeTarget "MarcaBlanca" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AF44ABA227C00CB20084D749 /* Debug */,
+				AF44ABA327C00CB20084D749 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AF44ABA427C00CB20084D749 /* Build configuration list for PBXNativeTarget "MarcaBlancaTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AF44ABA527C00CB20084D749 /* Debug */,
+				AF44ABA627C00CB20084D749 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AF44ABA727C00CB20084D749 /* Build configuration list for PBXNativeTarget "MarcaBlancaUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AF44ABA827C00CB20084D749 /* Debug */,
+				AF44ABA927C00CB20084D749 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = AF44AB6F27C00CB00084D749 /* Project object */;
+}

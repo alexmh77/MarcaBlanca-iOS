@@ -1,0 +1,6 @@
+framework module Pods_MarcaBlancaTests {
+  umbrella header "Pods-MarcaBlancaTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

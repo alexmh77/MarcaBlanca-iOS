@@ -1,0 +1,79 @@
+{
+  "name": "C60SSDK",
+  "platforms": {
+    "ios": "13.0"
+  },
+  "summary": "C60S SDK",
+  "requires_arc": true,
+  "version": "0.0.31",
+  "swift_versions": "5.0",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "FelipeMEndoza": "osiris.ipn@gmail.com"
+  },
+  "homepage": "https://github.com/Soluciones-de-Buro-Moviles-S-A-de-C-V/C60S-iOS.git",
+  "source": {
+    "git": "https://github.com/Soluciones-de-Buro-Moviles-S-A-de-C-V/C60S-iOS.git",
+    "tag": "0.0.31"
+  },
+  "frameworks": "UIKit",
+  "source_files": [
+    "C60S/**/*.{swift}",
+    "C60S/*.{swift}"
+  ],
+  "resources": [
+    "C60S/**/*.{png,jpeg,jpg,storyboard,xib,xcassets}",
+    "C60S/**/**/*.{png,jpeg,jpg,storyboard,xib,xcassets}"
+  ],
+  "resource_bundles": {
+    "C60S": [
+      "C60S/**/*.{xib,storyboard,xcassets}",
+      "C60S/**/**/*.{png,jpeg,jpg,storyboard,xib}"
+    ]
+  },
+  "dependencies": {
+    "Amplify": [
+
+    ],
+    "AmplifyPlugins/AWSCognitoAuthPlugin": [
+
+    ],
+    "ProgressHUD": [
+
+    ],
+    "Material": [
+
+    ],
+    "NVActivityIndicatorView": [
+
+    ],
+    "SwiftKeychainWrapper": [
+
+    ],
+    "Alamofire": [
+      "5.2"
+    ],
+    "PINRemoteImage": [
+
+    ],
+    "SwiftSignatureView": [
+
+    ]
+  },
+  "vendored_frameworks": [
+    "SCSSDKiOS.xcframework",
+    "CredoAppMusic.xcframework",
+    "CredoAppMedia.xcframework",
+    "CredoAppCore.xcframework",
+    "CredoAppContacts.xcframework",
+    "CredoAppCalendarReminders.xcframework",
+    "CredoAppCalendarEvents.xcframework"
+  ],
+  "info_plist": {
+    "NSContactsUsageDescription": "You have to describe the real usage for a human."
+  },
+  "swift_version": "5.0"
+}

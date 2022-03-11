@@ -1,0 +1,6 @@
+framework module Pods_MarcaBlanca {
+  umbrella header "Pods-MarcaBlanca-umbrella.h"
+
+  export *
+  module * { export * }
+}

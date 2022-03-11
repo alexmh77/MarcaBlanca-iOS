@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MarcaBlanca" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zwn-6p-JKJ">
+                                <rect key="frame" x="32" y="311" width="350" height="120"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="120" id="X3W-vc-BRq"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Cargar SDK "/>
+                                <connections>
+                                    <action selector="action:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sdl-3S-klX"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R3g-lN-Lk7">
+                                <rect key="frame" x="32" y="465" width="350" height="120"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="120" id="3Dl-Pe-Nua"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Obtener historial"/>
+                                <connections>
+                                    <action selector="historyAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gpw-34-uYL"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Estatus del SDK:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qNG-XA-Dox">
+                                <rect key="frame" x="32" y="102" width="127" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="127" id="gkv-J1-bFQ"/>
+                                    <constraint firstAttribute="height" constant="21" id="tJD-ay-4ce"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="statuslabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IYh-2f-67X">
+                                <rect key="frame" x="32" y="142" width="362" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="362" id="seP-xw-2e1"/>
+                                    <constraint firstAttribute="height" constant="21" id="sj6-qU-Uwm"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="IYh-2f-67X" firstAttribute="top" secondItem="qNG-XA-Dox" secondAttribute="bottom" constant="19" id="41k-tH-6KV"/>
+                            <constraint firstItem="Zwn-6p-JKJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="32" id="BIi-3e-nx8"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Zwn-6p-JKJ" secondAttribute="trailing" constant="32" id="FWp-Dv-6FP"/>
+                            <constraint firstItem="R3g-lN-Lk7" firstAttribute="top" secondItem="Zwn-6p-JKJ" secondAttribute="bottom" constant="34" id="Jph-yB-3i5"/>
+                            <constraint firstItem="qNG-XA-Dox" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="58" id="M2F-ga-8yk"/>
+                            <constraint firstItem="Zwn-6p-JKJ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="267" id="Rs4-IL-3Om"/>
+                            <constraint firstItem="R3g-lN-Lk7" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="32" id="fT1-kb-An5"/>
+                            <constraint firstItem="IYh-2f-67X" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="32" id="tTI-aY-8OH"/>
+                            <constraint firstItem="qNG-XA-Dox" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="32" id="unf-Tw-5UM"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="R3g-lN-Lk7" secondAttribute="trailing" constant="32" id="yqP-So-myd"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="button" destination="Zwn-6p-JKJ" id="0Ff-Yf-cfo"/>
+                        <outlet property="statusSDKLabel" destination="IYh-2f-67X" id="QYb-dx-1LA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-26.086956521739133" y="101.78571428571428"/>
+        </scene>
+        <!--Welcome View Controller-->
+        <scene sceneID="p1d-1c-QBc">
+            <objects>
+                <viewController id="wNF-9Q-Xmg" customClass="WelcomeViewController" customModule="C60SSDK" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="PFz-kT-f7u">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="qfj-b6-hfb"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qkb-V6-1u8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="884" y="98"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

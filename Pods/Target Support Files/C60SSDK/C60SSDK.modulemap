@@ -1,0 +1,6 @@
+framework module C60SSDK {
+  umbrella header "C60SSDK-umbrella.h"
+
+  export *
+  module * { export * }
+}
