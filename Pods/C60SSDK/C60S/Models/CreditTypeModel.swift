@@ -15,7 +15,7 @@ class CreditTypeModel {
     var subLabel: String
     var buttonLabel: String
     
-    init(id: Int, icon: String?, mainLabel: String, subLabel: String, buttonLabel: String) {
+    init(id: Int, icon: String, mainLabel: String, subLabel: String, buttonLabel: String) {
         self.id = id
         self.icon = icon
         self.mainLabel = mainLabel

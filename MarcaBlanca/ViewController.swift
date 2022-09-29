@@ -7,11 +7,12 @@
 
 import UIKit
 import C60SSDK
+//import RadioGroup
+import Material
 
 class ViewController: UIViewController {
     
     @IBOutlet weak var button: UIButton!
-    @IBOutlet weak var statusSDKLabel: UILabel!
     let sessionID:String = "d/fvIRnSFf2gQslGnCVm/pz7u8K5JTkEhja1rnr6rt2wvF0tFj68wuL+Zuy2DrEkSVvAtMilRZdleyVemc5gPL3wKnqiCgBZ0UpLzYyoLSIw09U5KAVmu1RWIapfCl4E"
     
     override func viewDidLoad() {
@@ -23,9 +24,14 @@ class ViewController: UIViewController {
         print(
         C60SSDK_START().SDKstatus()
         )
-        
-        statusSDKLabel.text = C60SSDK_START().SDKstatus()[1] as! String
-        
+        //self.view.backgroundColor = UIColor(patternImage: UIImage(named: "fondo_inicio")!)
+
+        //statusSDKLabel.text = C60SSDK_START().SDKstatus()[1] as! String
+        button.layer.cornerRadius = button.frame.height / 2
+        button.clipsToBounds = true
+        button.layer.borderColor = UIColor.white.cgColor
+        button.layer.borderWidth = 1.0
+        button.tintColor = .white
     }
     
     @IBAction func action(_ sender: Any) {

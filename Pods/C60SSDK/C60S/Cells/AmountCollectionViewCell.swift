@@ -34,24 +34,42 @@ class AmountCollectionViewCell: UICollectionViewCell {
     
     
     func setModel(model: AmountModel) {
+        
+        print("entre a set model 👺")
         self.model = model
+        print(model)
         self.amountLabel.text = model.name
         
         if model.status {
-            card.layer.borderColor = VisualAssets().colorNameLightBlue.cgColor
-            card.layer.shadowColor = UIColor.black.cgColor
-            card.layer.backgroundColor = VisualAssets().colorNameLightBlue.cgColor
-            self.amountLabel.textColor = .white
+            
+            print("if de model estatus")
+            
+            var totalamount = model.name ?? "0"
+            
+            print("total amount")
+            print(totalamount)
+            
+            totalamount = totalamount.replacingOccurrences(of: "$", with: "", options: .literal, range: nil)
+            totalamount = totalamount.replacingOccurrences(of: ",", with: "", options: .literal, range: nil)
+            print("selected::: \(totalamount)")
+            SurveyData.shared.setTotalAmount(totalamount: Int(totalamount) ?? 0)
+           // card.layer.borderColor = VisualAssets().colorNameLightBlue.cgColor
+            //card.layer.shadowColor = UIColor.black.cgColor
+            //card.layer.backgroundColor = VisualAssets().colorNameLightBlue.cgColor
+            //self.amountLabel.textColor = .white
+            /*self.card.viewStyle(bgcolor: "cardBackgroundColor")*/
         } else {
-            card.layer.cornerRadius = 25
-            card.layer.borderWidth = 1.5
-            card.layer.borderColor = VisualAssets().colorNameLightBlue.cgColor
-            card.layer.shadowColor = UIColor.black.cgColor
+            //card.layer.cornerRadius = 25
+            self.amountLabel.labelStyle(bgcolor: "", textcolor: "cardTitleColor")
+            card.layer.borderWidth = 0
+            card.layer.borderColor = CGColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+            /*card.layer.shadowColor = UIColor.black.cgColor
             card.layer.shadowOffset = CGSize(width: 2, height: 2)
             card.layer.shadowOpacity = 0.3
-            card.layer.shadowRadius = 5.0
+            card.layer.shadowRadius = 5.0*/
             card.layer.backgroundColor = CGColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
-            self.amountLabel.textColor = VisualAssets().colorNameBlue
+            //self.amountLabel.textColor = VisualAssets().colorNameBlue
+            self.card.viewStyle(bgcolor: "cardBackgroundColor")
         }
     }
     

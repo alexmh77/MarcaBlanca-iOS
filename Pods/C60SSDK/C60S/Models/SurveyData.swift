@@ -7,15 +7,16 @@
 
 import Foundation
 import UIKit
-import Amplify
+//import Amplify
 
 
-class SurveyData {
+public class SurveyData {
     
     static let shared = SurveyData()
     
     let requests = SCSRequests()
     var data: [SurveyConfig] = []
+    var requestData: Consumer? = []
     var colors: Colors?
     var creditTypeIndex: Int = 0
     var payperiods: Int = 0
@@ -39,9 +40,19 @@ class SurveyData {
     var name = ""
     var isComplete = false
     var errorDescription = "SDK no inicializado"
-    
+    var totalamount: Int = 0
+    var firebaseToken: String = ""
+    var score: Int = 0
     private init() {}
     
+    
+    func setFirebaseToken(token: String){
+        self.firebaseToken = token
+    }
+    
+    func getFirebaseToken()->String{
+        self.firebaseToken
+    }
     
     func setIsComplete(complete:Bool){
         self.isComplete = complete
@@ -69,11 +80,37 @@ class SurveyData {
         })
     }
     
+    func setRequestHistory(completion: @escaping () -> ()){
+        
+        let params = ["consumerid": self.consumerid]
+        requests.ConsumerByID(data: params){
+            s,arg  in
+            
+            self.requestData = s ?? []
+            completion()
+        }
+    }
     
     func getConfig() -> [SurveyConfig] {
         return data
     }
     
+    
+    func setTotalAmount(totalamount: Int){
+        self.totalamount = totalamount
+    }
+    
+    func getTotalAmount()->Int{
+        return self.totalamount
+    }
+    
+    func setScore(score: Int){
+        self.score  = score
+    }
+    
+    func getScore()->Int{
+        return self.score
+    }
     
     func setCreditTypeIndex(index: Int) {
         self.creditTypeIndex = index
@@ -86,6 +123,11 @@ class SurveyData {
         } else {
             return data[0]
         }
+    }
+    
+    func getRequesthistory() -> Consumer {
+        requestData ?? []
+        
     }
     
     func setOriginViewController(originVC: UIViewController){
@@ -147,7 +189,8 @@ class SurveyData {
     
     
     func setReferenceNumber(referenceNumber: String) {
-        self.referenceNumber = referenceNumber
+        //self.referenceNumber = referenceNumber
+        self.referenceNumber = "1645602698947.717"
     }
     
     
@@ -162,6 +205,11 @@ class SurveyData {
     
     func setConsumerId(consumerid: Int){
         self.consumerid = consumerid
+        //self.consumerid = 26731
+    }
+    
+    func getConsumerId()->Int{
+        return self.consumerid
     }
     
     func setListingId(listingId: Int){
@@ -191,13 +239,23 @@ class SurveyData {
         df.dateFormat = "yyyy-MM-dd HH:mm:ss"
         let dateString = df.string(from: date)
         let dataReq:[String: Any] = [
-            
             "consumerid": self.consumerid,
             "listingid": self.listingid,
             "signeddate": dateString,
             "signaturedata": self.signatureData,
-            "signaturefilename": "\(self.consumerid)_image.png"
+            "signaturefilename": "\(self.consumerid)_image.png",
+            "referencenumber":self.referenceNumber
+        ]
+        
+        return dataReq
+    }
+    
+    func getConsumerData() -> [String:Any]{
+        
+        let dataReq:[String:Any] = [
             
+            "consumerid": self.consumerid
+        
         ]
         
         return dataReq
@@ -226,11 +284,28 @@ class SurveyData {
             "purposeid" : self.needs,
             "categoryid": self.creditTypeIndex,
             "incomeid": self.incomeId,
-            "supporttypeid": self.supportId
+            "supporttypeid": self.supportId,
+            "locale": SCSRequests().getLocale()
 //            "term": self.productterms,
 //            "period": self.payperiods,
 //            "score": 0,
         ]
         return data
     }
+}
+
+
+class PersistanceData{
+    
+    let defaults = UserDefaults.standard
+    
+    func getConsumerId() -> String {
+        return defaults.string(forKey: "consumer") ?? ""
+    }
+    
+    func saveConsumerId(consumer: String)
+    {
+        defaults.set(consumer, forKey: "consumer")
+    }
+    
 }

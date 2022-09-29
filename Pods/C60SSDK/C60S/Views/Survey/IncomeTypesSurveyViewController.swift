@@ -7,18 +7,23 @@
 
 import UIKit
 
-class IncomeTypesSurveyViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, MonthlyIncomeDelegate {
+class IncomeTypesSurveyViewController: BaseViewController, UITableViewDataSource, UITableViewDelegate, MonthlyIncomeDelegate {
 
     @IBOutlet weak var dismissButton: UIButton!
     @IBOutlet weak var continueButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
     
+    @IBOutlet weak var TitleBig: UILabel!
+    @IBOutlet weak var HeaderTableView: UITableView!
+    @IBOutlet weak var background: UIImageView!
     var incomeTypes: [MonthlyIncomeModel] = []
     var incomeId = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
         overrideUserInterfaceStyle = .light
+        print("😊")
+        print(SurveyData.shared.supportId)
         // Do any additional setup after loading the view.
         if let data = SurveyData.shared.getCreditTypeConfigurations().incometypes?.enumerated() {
             for (i, need) in data {
@@ -34,6 +39,24 @@ class IncomeTypesSurveyViewController: UIViewController, UITableViewDataSource, 
         tableView.reloadData()
         
         self.continueButton.isEnabled = false
+        
+        // header
+        //self.HeaderTableView.tableStyle(bgcolor: "headerBackgroundColor")
+        self.HeaderTableView?.tableStyle(bgcolor: "headerBackgroundColor")
+        self.HeaderTableView?.layer.cornerRadius = 30.0
+        self.HeaderTableView?.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMinXMaxYCorner]
+      //  self.img1.downloaded(asset: "360image")
+        
+        //header
+        
+        self.TitleBig.labelStyle(bgcolor: "", textcolor: "titleTextColor")
+        
+        //background
+        self.background.downloaded(asset: "bodyBackgroundImage", bgcolor: "bodyBackgroundColor", contentMode: .bottom)
+        
+        SCSRequests().setTracker(id: 6, orgid: 1, typeid: 6){
+            s in print("RESPUESTA EN TRACKER PANTALLA 6 ####### \(s)")
+        }
     }
     
 
@@ -44,6 +67,7 @@ class IncomeTypesSurveyViewController: UIViewController, UITableViewDataSource, 
     
     func monthlyPressed(model: MonthlyIncomeModel) {
         self.continueButton.isEnabled = true
+        self.continueButton.buttonStyle(bgcolor: "buttonBackgroundColor", textcolor: "buttonTextColor", bordercolor: "buttonBackgroundColor")
         incomeId = model.id
         
         if let data = SurveyData.shared.getCreditTypeConfigurations().incometypes {
@@ -57,20 +81,43 @@ class IncomeTypesSurveyViewController: UIViewController, UITableViewDataSource, 
         }
         
         // Deactivate all cards except other and save in singleton
-        tableView.reloadData()
+        //tableView.reloadData()
+        
+         print("1")
+         print(SurveyData.shared.incomeId)
+         
+         SurveyData.shared.setIncomeTypeSurvey(incomeId: incomeId)
+         
+         print("2")
+         print(SurveyData.shared.incomeId)
+         self.performSegue(withIdentifier: "popUpSCSSegue", sender: nil)
     }
     
     
     @IBAction func continuePressed(_ sender: UIButton) {
        // let id = self.incomeTypes[self.incomeTypesPicker.selectedRow(inComponent: 0)].id
         //print("IncomeType id: \(id)")
+       /* print("1")
+        print(SurveyData.shared.incomeId)
+        
         SurveyData.shared.setIncomeTypeSurvey(incomeId: incomeId)
-        self.performSegue(withIdentifier: "popUpSCSSegue", sender: nil)
+        
+        print("2")
+        print(SurveyData.shared.incomeId)
+        self.performSegue(withIdentifier: "popUpSCSSegue", sender: nil)*/
     }
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return incomeTypes.count
+            //print("entre contador tabla")
+        var count:Int?
+        
+        if tableView == self.tableView {
+            count =  incomeTypes.count
+        }else if tableView == HeaderTableView{
+            count = 1
+        }
+        return  count!
     }
     
 
@@ -79,11 +126,21 @@ class IncomeTypesSurveyViewController: UIViewController, UITableViewDataSource, 
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let model = incomeTypes[indexPath.row]
-        let cell = tableView.dequeueReusableCell(withIdentifier: "monthlyIncomeCell") as! MonthlyIncomeTableViewCell
-        cell.setModel(model: model)
-        cell.delegate = self
+        if tableView == self.tableView{
+            let model = incomeTypes[indexPath.row]
+            let cell = tableView.dequeueReusableCell(withIdentifier: "monthlyIncomeCell") as! MonthlyIncomeTableViewCell
+            cell.setModel(model: model)
+            cell.delegate = self
+            
+            return cell
+        }else if tableView == HeaderTableView{
+            let cell = tableView.dequeueReusableCell(withIdentifier: "logoCell", for: indexPath) as! HeaderTableViewCell
+            /*cell.imageCell.image = UIImage(named: exercisesList[indexPath.row])*/
+            return cell
+        }
+        return UITableViewCell()
         
-        return cell
     }
+    
+    
 }

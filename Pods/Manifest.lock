@@ -1,41 +1,15 @@
 PODS:
-  - Alamofire (5.2.0)
-  - Amplify (1.21.0):
-    - Amplify/Default (= 1.21.0)
-  - Amplify/Default (1.21.0)
-  - AmplifyPlugins/AWSCognitoAuthPlugin (1.21.0):
-    - AWSAuthCore (~> 2.27.0)
-    - AWSCognitoIdentityProvider (~> 2.27.0)
-    - AWSCognitoIdentityProviderASF (~> 2.27.0)
-    - AWSCore (~> 2.27.0)
-    - AWSMobileClient (~> 2.27.0)
-    - AWSPluginsCore (= 1.21.0)
-  - AWSAuthCore (2.27.2):
-    - AWSCore (= 2.27.2)
-  - AWSCognitoIdentityProvider (2.27.2):
-    - AWSCognitoIdentityProviderASF (= 2.27.2)
-    - AWSCore (= 2.27.2)
-  - AWSCognitoIdentityProviderASF (2.27.2):
-    - AWSCore (= 2.27.2)
-  - AWSCore (2.27.2)
-  - AWSMobileClient (2.27.2):
-    - AWSAuthCore (= 2.27.2)
-    - AWSCognitoIdentityProvider (= 2.27.2)
-    - AWSCognitoIdentityProviderASF (= 2.27.2)
-    - AWSCore (= 2.27.2)
-  - AWSPluginsCore (1.21.0):
-    - Amplify (= 1.21.0)
-    - AWSCore (~> 2.27.0)
-  - C60SSDK (0.0.31):
-    - Alamofire (= 5.2)
-    - Amplify
-    - AmplifyPlugins/AWSCognitoAuthPlugin
+  - Alamofire (5.6.2)
+  - C60SSDK (0.1.5):
+    - Alamofire
+    - iOSDropDown
     - Material
     - NVActivityIndicatorView
     - PINRemoteImage
     - ProgressHUD
     - SwiftKeychainWrapper
     - SwiftSignatureView
+  - iOSDropDown (0.4.0)
   - Material (3.1.8):
     - Material/Core (= 3.1.8)
   - Material/Core (3.1.8):
@@ -62,23 +36,18 @@ PODS:
     - PINCache (~> 3.0.3)
     - PINRemoteImage/Core
   - ProgressHUD (13.6)
+  - SrPago-Ecommerce (1.2.1)
   - SwiftKeychainWrapper (4.0.1)
   - SwiftSignatureView (3.2.0)
 
 DEPENDENCIES:
-  - C60SSDK (from `https://github.com/Soluciones-de-Buro-Moviles-S-A-de-C-V/C60S-iOS.git`, branch `claro360`)
+  - C60SSDK (from `https://github.com/ProsperasTeam/C60S-iOS.git`, branch `sdk-prosperas`)
+  - SrPago-Ecommerce (= 1.2.1)
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - Alamofire
-    - Amplify
-    - AmplifyPlugins
-    - AWSAuthCore
-    - AWSCognitoIdentityProvider
-    - AWSCognitoIdentityProviderASF
-    - AWSCore
-    - AWSMobileClient
-    - AWSPluginsCore
+    - iOSDropDown
     - Material
     - Motion
     - NVActivityIndicatorView
@@ -86,30 +55,24 @@ SPEC REPOS:
     - PINOperation
     - PINRemoteImage
     - ProgressHUD
+    - SrPago-Ecommerce
     - SwiftKeychainWrapper
     - SwiftSignatureView
 
 EXTERNAL SOURCES:
   C60SSDK:
-    :branch: claro360
-    :git: https://github.com/Soluciones-de-Buro-Moviles-S-A-de-C-V/C60S-iOS.git
+    :branch: sdk-prosperas
+    :git: https://github.com/ProsperasTeam/C60S-iOS.git
 
 CHECKOUT OPTIONS:
   C60SSDK:
-    :commit: 8b54079f8e837df033b74dace72ec790b512ebf2
-    :git: https://github.com/Soluciones-de-Buro-Moviles-S-A-de-C-V/C60S-iOS.git
+    :commit: 8d444f43b0c5146433b48a95235f696bdc553413
+    :git: https://github.com/ProsperasTeam/C60S-iOS.git
 
 SPEC CHECKSUMS:
-  Alamofire: c1ca147559e730bfb2182c8c7aafbdd90a867987
-  Amplify: 8af0fbd1856d7418469ee3f940f428925902210e
-  AmplifyPlugins: f2a93ae2a981e3a7f362ad00c39e2656af038215
-  AWSAuthCore: bf09d476ed9cbc3b3c0d106997020712ff96ae0b
-  AWSCognitoIdentityProvider: bab85c753763a6ffa7764875e5c2303cdd82928d
-  AWSCognitoIdentityProviderASF: 24d554b7a39fdac0892353a41a460821946aa8e2
-  AWSCore: 577d083806d0d86d102462cdd06d16706b74410b
-  AWSMobileClient: a4716d7418ca79fb3081d97139fb590c2a4e7cd8
-  AWSPluginsCore: d0e4ea6ca225b0f79e40193178c06348b8220a86
-  C60SSDK: bc6ef80ad21a43b9c80114ffd59bd74b89479acb
+  Alamofire: d368e1ff8a298e6dde360e35a3e68e6c610e7204
+  C60SSDK: c4a6fff92d3513fcee3c20156b2c53033b8a85e9
+  iOSDropDown: ce9daa584eaa5567cafc1b633e3cc7eb6d9cea42
   Material: a2a3f400a3b549d53ef89e56c58c4535b29db387
   Motion: cf1e060e489f6661126374d5c60dbd2ed991605c
   NVActivityIndicatorView: 1f6c5687f1171810aa27a3296814dc2d7dec3667
@@ -117,9 +80,10 @@ SPEC CHECKSUMS:
   PINOperation: 00c935935f1e8cf0d1e2d6b542e75b88fc3e5e20
   PINRemoteImage: f1295b29f8c5e640e25335a1b2bd9d805171bd01
   ProgressHUD: 4bdaa0d2ddf676b23324b199f9facffb5c3a1620
+  SrPago-Ecommerce: a5e73c901e518f286cca95c03767105338098739
   SwiftKeychainWrapper: 807ba1d63c33a7d0613288512399cd1eda1e470c
   SwiftSignatureView: cd8cca297cc2ca6a6c174da22fb908c33d03d3c0
 
-PODFILE CHECKSUM: ff66b6a067fc3eef330600e97cd812d2543c6a76
+PODFILE CHECKSUM: 28c0689eddbed75b7d9531a8837ebaf8e7455db4
 
-COCOAPODS: 1.11.2
+COCOAPODS: 1.11.3

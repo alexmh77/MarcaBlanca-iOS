@@ -7,7 +7,7 @@
 
 import Foundation
 import UIKit
-
+import Alamofire
 public protocol DataEnteredDelegate: AnyObject {
     
     func userDidEnterInformation(response: [Any])
@@ -24,6 +24,7 @@ public class C60SSDK_START: UIViewController {
     }
     
     public func finish(_ vc: UIViewController){
+        
         self.ALV(vc)
     }
     
@@ -67,8 +68,6 @@ public class C60SSDK_START: UIViewController {
              completion(responseHistory)
         }
         
-        
-        
     }
     
     public func SDKstatus()->[Any]{
@@ -76,6 +75,43 @@ public class C60SSDK_START: UIViewController {
     }
     
     public func start(sessionID: String, _ vc: UIViewController){
+        func getDocumentsDirectory() -> URL {
+            let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+            let documentsDirectory = paths[0]
+            return documentsDirectory
+        }
+        let dir = getDocumentsDirectory()
+        //let baseURL = "http://10.135.1.100:8077/v1/"
+        let baseURL = "https://mp.securecreditsystems.com/v1/"
+        let apiKey = "044bbc6e-37e1-4e7a-bb64-ba8dc8696dd5"
+        let locale = SCSRequests().getLocale()
+       // let path = "Config"
+        let path = "Config/044bbc6e-37e1-4e7a-bb64-ba8dc8696dd5/\(locale)"
+        let headers : HTTPHeaders = ["x-API-KEY": apiKey]
+        let request = AF.request("\(baseURL)\(path)", method: .get, headers: headers).responseJSON(completionHandler: { response in
+            switch response.result {
+            case .success:
+                do {
+                    let resJSON = JSON(response.value)
+                    let jsonData = try JSONEncoder().encode(resJSON)
+                    let jsonString = String(data: jsonData, encoding: .utf8)!
+                    if let documentDirectory = FileManager.default.urls(for: .documentDirectory,
+                                                                        in: .userDomainMask).first {
+                        let pathWithFilename = documentDirectory.appendingPathComponent("config.json")
+                        do {
+                            try jsonString.write(to: pathWithFilename,
+                                                 atomically: true,
+                                                 encoding: .utf8)
+                        } catch {
+                        }
+                    }
+                   } catch {
+                       print("JSONSerialization error:", error)
+                   }
+            case .failure(let error):
+                print(error)
+            }
+        })
         SurveyData.shared.setOriginViewController(originVC: vc)
         SurveyData.shared.ssetErrorDescription(error: "SDK inicializado pero sin finalizar")
         if(start!){

@@ -7,9 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		16C9834E828FC2183CD4662B /* Pods_MarcaBlanca.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BAE850D0F720F4D7D260D2B /* Pods_MarcaBlanca.framework */; };
-		6D68BD6A9C6EDA0FA89C256E /* Pods_MarcaBlanca_MarcaBlancaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 094821C2E52F5D09820646F0 /* Pods_MarcaBlanca_MarcaBlancaUITests.framework */; };
-		AF0B97B027C2D09D0037B3BA /* amplifyconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = AF0B97AF27C2D09D0037B3BA /* amplifyconfiguration.json */; };
+		34A129101FDA311A6BA4D3E6 /* Pods_MarcaBlancaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDA5B604EBA05BB573E5372A /* Pods_MarcaBlancaTests.framework */; };
+		8A53CC8CE4D19E4687F54D54 /* Pods_MarcaBlanca_MarcaBlancaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5452E165ABC4BF9872EC5235 /* Pods_MarcaBlanca_MarcaBlancaUITests.framework */; };
 		AF44AB7B27C00CB00084D749 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF44AB7A27C00CB00084D749 /* AppDelegate.swift */; };
 		AF44AB7D27C00CB00084D749 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF44AB7C27C00CB00084D749 /* SceneDelegate.swift */; };
 		AF44AB7F27C00CB00084D749 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF44AB7E27C00CB00084D749 /* ViewController.swift */; };
@@ -19,7 +18,8 @@
 		AF44AB9227C00CB10084D749 /* MarcaBlancaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF44AB9127C00CB10084D749 /* MarcaBlancaTests.swift */; };
 		AF44AB9C27C00CB10084D749 /* MarcaBlancaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF44AB9B27C00CB10084D749 /* MarcaBlancaUITests.swift */; };
 		AF44AB9E27C00CB10084D749 /* MarcaBlancaUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF44AB9D27C00CB10084D749 /* MarcaBlancaUITestsLaunchTests.swift */; };
-		FF14383D2BC4A7D41830FDD7 /* Pods_MarcaBlancaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9B55EA52D438B3A8FD9DA0E /* Pods_MarcaBlancaTests.framework */; };
+		AFD85C6E2851753A002A1B24 /* amplifyconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = AFD85C6D2851753A002A1B24 /* amplifyconfiguration.json */; };
+		C28752AC642F3F6BA933A1CA /* Pods_MarcaBlanca.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AFD326DBA63CBB447731B2C /* Pods_MarcaBlanca.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,15 +39,24 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		AF81BA16285BA7470025BC48 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		094821C2E52F5D09820646F0 /* Pods_MarcaBlanca_MarcaBlancaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MarcaBlanca_MarcaBlancaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		117B3E680A58EC941625E329 /* Pods-MarcaBlanca-MarcaBlancaUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarcaBlanca-MarcaBlancaUITests.debug.xcconfig"; path = "Target Support Files/Pods-MarcaBlanca-MarcaBlancaUITests/Pods-MarcaBlanca-MarcaBlancaUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		24E5BFDC541BA6B1F180E54A /* Pods-MarcaBlanca.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarcaBlanca.debug.xcconfig"; path = "Target Support Files/Pods-MarcaBlanca/Pods-MarcaBlanca.debug.xcconfig"; sourceTree = "<group>"; };
-		5F9A0C7DC92EAD4C5D6B028E /* Pods-MarcaBlancaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarcaBlancaTests.release.xcconfig"; path = "Target Support Files/Pods-MarcaBlancaTests/Pods-MarcaBlancaTests.release.xcconfig"; sourceTree = "<group>"; };
-		61A04933C42BAC246BAAA794 /* Pods-MarcaBlancaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarcaBlancaTests.debug.xcconfig"; path = "Target Support Files/Pods-MarcaBlancaTests/Pods-MarcaBlancaTests.debug.xcconfig"; sourceTree = "<group>"; };
-		6BAE850D0F720F4D7D260D2B /* Pods_MarcaBlanca.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MarcaBlanca.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		9010F035E0323855AF65F3D2 /* Pods-MarcaBlanca.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarcaBlanca.release.xcconfig"; path = "Target Support Files/Pods-MarcaBlanca/Pods-MarcaBlanca.release.xcconfig"; sourceTree = "<group>"; };
-		AF0B97AF27C2D09D0037B3BA /* amplifyconfiguration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = amplifyconfiguration.json; path = "../../C60S-iOS/amplifyconfiguration.json"; sourceTree = "<group>"; };
+		2CD7CED3459C2271DB9883AD /* Pods-MarcaBlancaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarcaBlancaTests.debug.xcconfig"; path = "Target Support Files/Pods-MarcaBlancaTests/Pods-MarcaBlancaTests.debug.xcconfig"; sourceTree = "<group>"; };
+		51F93FA1776DF9B32E98BB6A /* Pods-MarcaBlancaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarcaBlancaTests.release.xcconfig"; path = "Target Support Files/Pods-MarcaBlancaTests/Pods-MarcaBlancaTests.release.xcconfig"; sourceTree = "<group>"; };
+		5452E165ABC4BF9872EC5235 /* Pods_MarcaBlanca_MarcaBlancaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MarcaBlanca_MarcaBlancaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9AFD326DBA63CBB447731B2C /* Pods_MarcaBlanca.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MarcaBlanca.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF44AB7727C00CB00084D749 /* MarcaBlanca.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MarcaBlanca.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF44AB7A27C00CB00084D749 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AF44AB7C27C00CB00084D749 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -61,8 +70,12 @@
 		AF44AB9727C00CB10084D749 /* MarcaBlancaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MarcaBlancaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF44AB9B27C00CB10084D749 /* MarcaBlancaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarcaBlancaUITests.swift; sourceTree = "<group>"; };
 		AF44AB9D27C00CB10084D749 /* MarcaBlancaUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarcaBlancaUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		D6DA670F73B51E1D103CF079 /* Pods-MarcaBlanca-MarcaBlancaUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarcaBlanca-MarcaBlancaUITests.release.xcconfig"; path = "Target Support Files/Pods-MarcaBlanca-MarcaBlancaUITests/Pods-MarcaBlanca-MarcaBlancaUITests.release.xcconfig"; sourceTree = "<group>"; };
-		E9B55EA52D438B3A8FD9DA0E /* Pods_MarcaBlancaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MarcaBlancaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AFD85C6D2851753A002A1B24 /* amplifyconfiguration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = amplifyconfiguration.json; sourceTree = "<group>"; };
+		B899741C7A7C57070D8C0AF9 /* Pods-MarcaBlanca.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarcaBlanca.debug.xcconfig"; path = "Target Support Files/Pods-MarcaBlanca/Pods-MarcaBlanca.debug.xcconfig"; sourceTree = "<group>"; };
+		C35BF4A1B7628C32E68604C6 /* Pods-MarcaBlanca.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarcaBlanca.release.xcconfig"; path = "Target Support Files/Pods-MarcaBlanca/Pods-MarcaBlanca.release.xcconfig"; sourceTree = "<group>"; };
+		D351D4291FBC314375755CD5 /* Pods-MarcaBlanca-MarcaBlancaUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarcaBlanca-MarcaBlancaUITests.debug.xcconfig"; path = "Target Support Files/Pods-MarcaBlanca-MarcaBlancaUITests/Pods-MarcaBlanca-MarcaBlancaUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		EDA5B604EBA05BB573E5372A /* Pods_MarcaBlancaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MarcaBlancaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EE723FFB79AC508E1DD52873 /* Pods-MarcaBlanca-MarcaBlancaUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarcaBlanca-MarcaBlancaUITests.release.xcconfig"; path = "Target Support Files/Pods-MarcaBlanca-MarcaBlancaUITests/Pods-MarcaBlanca-MarcaBlancaUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,7 +83,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				16C9834E828FC2183CD4662B /* Pods_MarcaBlanca.framework in Frameworks */,
+				C28752AC642F3F6BA933A1CA /* Pods_MarcaBlanca.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,7 +91,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FF14383D2BC4A7D41830FDD7 /* Pods_MarcaBlancaTests.framework in Frameworks */,
+				34A129101FDA311A6BA4D3E6 /* Pods_MarcaBlancaTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,7 +99,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6D68BD6A9C6EDA0FA89C256E /* Pods_MarcaBlanca_MarcaBlancaUITests.framework in Frameworks */,
+				8A53CC8CE4D19E4687F54D54 /* Pods_MarcaBlanca_MarcaBlancaUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -96,24 +109,14 @@
 		3172E5F019F7F3522CA75023 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				24E5BFDC541BA6B1F180E54A /* Pods-MarcaBlanca.debug.xcconfig */,
-				9010F035E0323855AF65F3D2 /* Pods-MarcaBlanca.release.xcconfig */,
-				117B3E680A58EC941625E329 /* Pods-MarcaBlanca-MarcaBlancaUITests.debug.xcconfig */,
-				D6DA670F73B51E1D103CF079 /* Pods-MarcaBlanca-MarcaBlancaUITests.release.xcconfig */,
-				61A04933C42BAC246BAAA794 /* Pods-MarcaBlancaTests.debug.xcconfig */,
-				5F9A0C7DC92EAD4C5D6B028E /* Pods-MarcaBlancaTests.release.xcconfig */,
+				B899741C7A7C57070D8C0AF9 /* Pods-MarcaBlanca.debug.xcconfig */,
+				C35BF4A1B7628C32E68604C6 /* Pods-MarcaBlanca.release.xcconfig */,
+				D351D4291FBC314375755CD5 /* Pods-MarcaBlanca-MarcaBlancaUITests.debug.xcconfig */,
+				EE723FFB79AC508E1DD52873 /* Pods-MarcaBlanca-MarcaBlancaUITests.release.xcconfig */,
+				2CD7CED3459C2271DB9883AD /* Pods-MarcaBlancaTests.debug.xcconfig */,
+				51F93FA1776DF9B32E98BB6A /* Pods-MarcaBlancaTests.release.xcconfig */,
 			);
 			path = Pods;
-			sourceTree = "<group>";
-		};
-		603CD772938D1C8FE6567984 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				6BAE850D0F720F4D7D260D2B /* Pods_MarcaBlanca.framework */,
-				094821C2E52F5D09820646F0 /* Pods_MarcaBlanca_MarcaBlancaUITests.framework */,
-				E9B55EA52D438B3A8FD9DA0E /* Pods_MarcaBlancaTests.framework */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		AF44AB6E27C00CB00084D749 = {
@@ -124,7 +127,7 @@
 				AF44AB9A27C00CB10084D749 /* MarcaBlancaUITests */,
 				AF44AB7827C00CB00084D749 /* Products */,
 				3172E5F019F7F3522CA75023 /* Pods */,
-				603CD772938D1C8FE6567984 /* Frameworks */,
+				EEA9387E6FCBE76C85E926C8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -141,7 +144,7 @@
 		AF44AB7927C00CB00084D749 /* MarcaBlanca */ = {
 			isa = PBXGroup;
 			children = (
-				AF0B97AF27C2D09D0037B3BA /* amplifyconfiguration.json */,
+				AFD85C6D2851753A002A1B24 /* amplifyconfiguration.json */,
 				AF44AB7A27C00CB00084D749 /* AppDelegate.swift */,
 				AF44AB7C27C00CB00084D749 /* SceneDelegate.swift */,
 				AF44AB7E27C00CB00084D749 /* ViewController.swift */,
@@ -170,6 +173,16 @@
 			path = MarcaBlancaUITests;
 			sourceTree = "<group>";
 		};
+		EEA9387E6FCBE76C85E926C8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9AFD326DBA63CBB447731B2C /* Pods_MarcaBlanca.framework */,
+				5452E165ABC4BF9872EC5235 /* Pods_MarcaBlanca_MarcaBlancaUITests.framework */,
+				EDA5B604EBA05BB573E5372A /* Pods_MarcaBlancaTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -177,11 +190,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AF44ABA127C00CB20084D749 /* Build configuration list for PBXNativeTarget "MarcaBlanca" */;
 			buildPhases = (
-				5802A0C2D48D78C9CE5541F4 /* [CP] Check Pods Manifest.lock */,
+				8C329B5A8CFF5E41F83783F2 /* [CP] Check Pods Manifest.lock */,
 				AF44AB7327C00CB00084D749 /* Sources */,
 				AF44AB7427C00CB00084D749 /* Frameworks */,
 				AF44AB7527C00CB00084D749 /* Resources */,
-				0E0DDD95D566576609A3A263 /* [CP] Embed Pods Frameworks */,
+				AF81BA16285BA7470025BC48 /* Embed Frameworks */,
+				CA7621C9E45B30B1A49D0D21 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -196,7 +210,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AF44ABA427C00CB20084D749 /* Build configuration list for PBXNativeTarget "MarcaBlancaTests" */;
 			buildPhases = (
-				C1AA4FCE6A6D25848A64F78D /* [CP] Check Pods Manifest.lock */,
+				2B54B5DD73A91A00C7211B5F /* [CP] Check Pods Manifest.lock */,
 				AF44AB8927C00CB10084D749 /* Sources */,
 				AF44AB8A27C00CB10084D749 /* Frameworks */,
 				AF44AB8B27C00CB10084D749 /* Resources */,
@@ -215,11 +229,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AF44ABA727C00CB20084D749 /* Build configuration list for PBXNativeTarget "MarcaBlancaUITests" */;
 			buildPhases = (
-				42F0A05326B3250801BCEB46 /* [CP] Check Pods Manifest.lock */,
+				C421F7CC39E0582AC13E72C8 /* [CP] Check Pods Manifest.lock */,
 				AF44AB9327C00CB10084D749 /* Sources */,
 				AF44AB9427C00CB10084D749 /* Frameworks */,
 				AF44AB9527C00CB10084D749 /* Resources */,
-				85F15B24C531080B8D843A21 /* [CP] Embed Pods Frameworks */,
+				FB2DB93627C90FF880E9E640 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -281,8 +295,8 @@
 			files = (
 				AF44AB8727C00CB10084D749 /* LaunchScreen.storyboard in Resources */,
 				AF44AB8427C00CB10084D749 /* Assets.xcassets in Resources */,
+				AFD85C6E2851753A002A1B24 /* amplifyconfiguration.json in Resources */,
 				AF44AB8227C00CB00084D749 /* Main.storyboard in Resources */,
-				AF0B97B027C2D09D0037B3BA /* amplifyconfiguration.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -303,24 +317,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0E0DDD95D566576609A3A263 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-MarcaBlanca/Pods-MarcaBlanca-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-MarcaBlanca/Pods-MarcaBlanca-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MarcaBlanca/Pods-MarcaBlanca-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		42F0A05326B3250801BCEB46 /* [CP] Check Pods Manifest.lock */ = {
+		2B54B5DD73A91A00C7211B5F /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -335,14 +332,14 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-MarcaBlanca-MarcaBlancaUITests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-MarcaBlancaTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		5802A0C2D48D78C9CE5541F4 /* [CP] Check Pods Manifest.lock */ = {
+		8C329B5A8CFF5E41F83783F2 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -364,24 +361,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		85F15B24C531080B8D843A21 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-MarcaBlanca-MarcaBlancaUITests/Pods-MarcaBlanca-MarcaBlancaUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-MarcaBlanca-MarcaBlancaUITests/Pods-MarcaBlanca-MarcaBlancaUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MarcaBlanca-MarcaBlancaUITests/Pods-MarcaBlanca-MarcaBlancaUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		C1AA4FCE6A6D25848A64F78D /* [CP] Check Pods Manifest.lock */ = {
+		C421F7CC39E0582AC13E72C8 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -396,11 +376,45 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-MarcaBlancaTests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-MarcaBlanca-MarcaBlancaUITests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CA7621C9E45B30B1A49D0D21 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MarcaBlanca/Pods-MarcaBlanca-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MarcaBlanca/Pods-MarcaBlanca-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MarcaBlanca/Pods-MarcaBlanca-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FB2DB93627C90FF880E9E640 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MarcaBlanca-MarcaBlancaUITests/Pods-MarcaBlanca-MarcaBlancaUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MarcaBlanca-MarcaBlancaUITests/Pods-MarcaBlanca-MarcaBlancaUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MarcaBlanca-MarcaBlancaUITests/Pods-MarcaBlanca-MarcaBlancaUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -579,6 +593,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
@@ -588,71 +603,93 @@
 		};
 		AF44ABA227C00CB20084D749 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 24E5BFDC541BA6B1F180E54A /* Pods-MarcaBlanca.debug.xcconfig */;
+			baseConfigurationReference = B899741C7A7C57070D8C0AF9 /* Pods-MarcaBlanca.debug.xcconfig */;
 			buildSettings = {
+				ARCHS = (
+					"$(ARCHS_STANDARD)",
+					"x86_64-apple-ios-simulator",
+				);
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 5JA6W6Z6L2;
+				DEVELOPMENT_TEAM = PM8388GQU4;
 				ENABLE_BITCODE = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MarcaBlanca/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = MarcaBlanca;
+				INFOPLIST_KEY_NSAppleMusicUsageDescription = "Play using while you are hiking";
+				INFOPLIST_KEY_NSContactsUsageDescription = "You have to describe the real usage for a human.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "You have to describe the real usage for a human.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = test.MarcaBlanca;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.prosperas.marketplacem;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_INSTALL_OBJC_HEADER = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		AF44ABA327C00CB20084D749 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9010F035E0323855AF65F3D2 /* Pods-MarcaBlanca.release.xcconfig */;
+			baseConfigurationReference = C35BF4A1B7628C32E68604C6 /* Pods-MarcaBlanca.release.xcconfig */;
 			buildSettings = {
+				ARCHS = (
+					"$(ARCHS_STANDARD)",
+					"x86_64-apple-ios-simulator",
+				);
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 5JA6W6Z6L2;
+				DEVELOPMENT_TEAM = PM8388GQU4;
 				ENABLE_BITCODE = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MarcaBlanca/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = MarcaBlanca;
+				INFOPLIST_KEY_NSAppleMusicUsageDescription = "Play using while you are hiking";
+				INFOPLIST_KEY_NSContactsUsageDescription = "You have to describe the real usage for a human.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "You have to describe the real usage for a human.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = test.MarcaBlanca;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.prosperas.marketplacem;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_INSTALL_OBJC_HEADER = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
 		AF44ABA527C00CB20084D749 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 61A04933C42BAC246BAAA794 /* Pods-MarcaBlancaTests.debug.xcconfig */;
+			baseConfigurationReference = 2CD7CED3459C2271DB9883AD /* Pods-MarcaBlancaTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -672,7 +709,7 @@
 		};
 		AF44ABA627C00CB20084D749 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5F9A0C7DC92EAD4C5D6B028E /* Pods-MarcaBlancaTests.release.xcconfig */;
+			baseConfigurationReference = 51F93FA1776DF9B32E98BB6A /* Pods-MarcaBlancaTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -692,7 +729,7 @@
 		};
 		AF44ABA827C00CB20084D749 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 117B3E680A58EC941625E329 /* Pods-MarcaBlanca-MarcaBlancaUITests.debug.xcconfig */;
+			baseConfigurationReference = D351D4291FBC314375755CD5 /* Pods-MarcaBlanca-MarcaBlancaUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -710,7 +747,7 @@
 		};
 		AF44ABA927C00CB20084D749 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D6DA670F73B51E1D103CF079 /* Pods-MarcaBlanca-MarcaBlancaUITests.release.xcconfig */;
+			baseConfigurationReference = EE723FFB79AC508E1DD52873 /* Pods-MarcaBlanca-MarcaBlancaUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

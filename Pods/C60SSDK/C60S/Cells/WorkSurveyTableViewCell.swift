@@ -13,12 +13,12 @@ protocol WorkSurveyCellDelegate: AnyObject {
     func radioPressed(model: WorkSurveyModel)
 }
 
-
 class WorkSurveyTableViewCell: UITableViewCell {
 
     @IBOutlet weak var card: UIView!
     @IBOutlet weak var radioButton: RadioButton!
     @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var icon: UIImageView!
     
     var model: WorkSurveyModel?
     weak var delegate: WorkSurveyCellDelegate?
@@ -32,6 +32,8 @@ class WorkSurveyTableViewCell: UITableViewCell {
     override func layoutSubviews() {
         super.layoutSubviews()
         contentView.backgroundColor = UIColor.clear
+        card.viewStyle(bgcolor: "cardBackgroundColor")
+        radioButton.isHidden = true
         radioButton.setTitle("", for: .normal)
         radioButton.pulseColor = visualAssets.colorNameLightBlue
         radioButton.shadowColor = UIColor.clear
@@ -39,6 +41,7 @@ class WorkSurveyTableViewCell: UITableViewCell {
         radioButton.setIconColor(visualAssets.colorNameLightBlue, for: .selected)
         let tap = UITapGestureRecognizer(target: self, action: #selector(self.handleTap(_:)))
         card.addGestureRecognizer(tap)
+        self.titleLabel.labelStyle(bgcolor: "", textcolor: "cardSubTitleColor")
     }
 
     
@@ -54,13 +57,22 @@ class WorkSurveyTableViewCell: UITableViewCell {
     func setModel(model: WorkSurveyModel) {
         self.model = model
         titleLabel.text = model.name
+        //print("icon en setmodel")
+        let iconUrl = model.icon as! String
+        if iconUrl.isEmpty {
+            print("El icono esta vacío o es nulo")
+            icon.image = nil;
+        }else{
+            print(model.icon)
+           icon.downloadedString(asset: iconUrl, bgcolor: "bodyBackgroundColor")
+        }
         radioButton.setSelected(false, animated: false)
         if model.status {
             card.layer.borderColor = visualAssets.colorNameLightBlue.cgColor
             card.layer.borderWidth = 1.5
             radioButton.setSelected(true, animated: true)
         } else {
-            card.layer.cornerRadius = 30
+            card.layer.cornerRadius = 15
             card.layer.borderColor = UIColor.black.cgColor
             card.layer.shadowColor = UIColor.black.cgColor
             card.layer.shadowOffset = CGSize(width: 2, height: 2)

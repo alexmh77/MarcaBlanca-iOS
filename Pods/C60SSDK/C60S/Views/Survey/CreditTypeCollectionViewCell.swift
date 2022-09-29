@@ -12,11 +12,11 @@ class CreditTypeCollectionViewCell: UICollectionViewCell {
     var model: CreditTypeModel?
     weak var delegate: CreditTypeDelegate?
     @IBOutlet weak var card: UIView!
-    @IBOutlet weak var icon: UIImageView!
     @IBOutlet weak var mainLabel: UILabel!
     @IBOutlet weak var subLabel: UILabel!
     @IBOutlet weak var button: UIButton!
-    
+    @IBOutlet weak var subLabel2: UILabel!
+    @IBOutlet weak var icon: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -26,14 +26,26 @@ class CreditTypeCollectionViewCell: UICollectionViewCell {
     override func layoutSubviews() {
         super.layoutSubviews()
         contentView.backgroundColor = UIColor.clear
+        self.button.buttonStyle(bgcolor: "buttonBackgroundColor", textcolor: "buttonTextColor", bordercolor: "buttonBackgroundColor")
+        
+        self.mainLabel.labelStyle(bgcolor: "tabBackgroundColor", textcolor: "tabTextColor")
+        
+        self.subLabel2.labelStyle(bgcolor: "", textcolor: "cardTitleColor")
+        
+        self.card.viewStyle(bgcolor: "cardBackgroundColor")
+
     }
     
     
     func setModel(model: CreditTypeModel) {
-
         self.model = model
         //C60SSDK_START().start(sessionID: "")
         card.layer.cornerRadius = 20
+        mainLabel.layer.cornerRadius = 10
+        mainLabel.layer.masksToBounds = true
+        subLabel2.numberOfLines = 1
+        subLabel2.adjustsFontSizeToFitWidth = true
+        subLabel2.font.withSize(30)        
         //card.layer.borderWidth = 0.5
         card.layer.borderColor = UIColor.black.cgColor
         card.layer.shadowColor = UIColor.black.cgColor
@@ -47,16 +59,42 @@ class CreditTypeCollectionViewCell: UICollectionViewCell {
                 return false
             }
         }
-        if !matches.isEmpty {
+       /* if !matches.isEmpty {
             print(matches.last!)
             
             icon.image = UIImage(named: model.icon ?? "", in: matches.last!, with: nil)
         } else {
             icon.image = UIImage(named: model.icon ?? "")
-        }
+        }*/
+
+        let iconUrl = model.icon as! String
+
+        self.icon.downloadedString(asset: iconUrl, bgcolor: "bodyBackgroundColor")
+        
+        
+       /* let image2 = URL(string: iconUrl)  as! URL
+        self.contentMode = .scaleAspectFit
+        URLSession.shared.dataTask(with: image2) { data, response, error in
+            guard
+                let httpURLResponse = response as? HTTPURLResponse, httpURLResponse.statusCode == 200,
+                let mimeType = response?.mimeType, mimeType.hasPrefix("image"),
+                let data = data, error == nil,
+                let image = UIImage(data: data)
+                else { return }
+
+            DispatchQueue.main.async() { [weak self] in
+                self!.icon.image = image
+            }
+        }.resume()*/
+        
+        //split string get amount
+        let myString: String = model.subLabel;
+        let myStringArr = myString.components(separatedBy: "$")
+        let myStringPrice = "$" + myStringArr[1]
         
         mainLabel.text = model.mainLabel
-        subLabel.text = model.subLabel
+        subLabel.text = myStringArr[0]
+        subLabel2.text = myStringPrice
     }
 
     

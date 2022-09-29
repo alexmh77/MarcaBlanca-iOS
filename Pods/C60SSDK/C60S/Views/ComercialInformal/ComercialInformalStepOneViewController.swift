@@ -7,13 +7,17 @@
 
 import UIKit
 
-class ComercialInformalStepOneViewController: UIViewController, AmountCellDelegate {    
+class ComercialInformalStepOneViewController: BaseViewController,  UITableViewDelegate, UITableViewDataSource, AmountCellDelegate {
 
     @IBOutlet weak var collectionView: UICollectionView!
     
+    @IBOutlet weak var subTitle: UILabel!
+    @IBOutlet weak var bigTitle: UILabel!
+    @IBOutlet weak var background: UIImageView!
+    @IBOutlet weak var HeaderTableView: UITableView!
     var productamounts: [AmountModel] = []
-    var widthCell = 250
-    var heightCell = 70
+    var widthCell = 185
+    var heightCell = 100
     let layout = UICollectionViewFlowLayout()
     var amountId = 0
     
@@ -27,6 +31,25 @@ class ComercialInformalStepOneViewController: UIViewController, AmountCellDelega
     // MARK: - Live Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        SCSRequests().setTracker(id: 29, orgid: 1, typeid: 29){
+            s in print("RESPUESTA EN TRACKER PANTALLA 29 ####### \(s)")
+        }
+        //background
+        self.background.downloaded(asset: "bodyBackgroundImage", bgcolor: "bodyBackgroundColor", contentMode: .bottom)
+        
+        self.bigTitle.labelStyle(bgcolor: "", textcolor: "titleTextColor")
+        self.subTitle.labelStyle(bgcolor: "", textcolor: "titleTextColor")
+        
+        self.continueButton.buttonStyle(bgcolor: "buttonBackgroundColor", textcolor: "buttonTextColor", bordercolor: "buttonBackgroundColor")
+  
+        // header
+        self.HeaderTableView.tableStyle(bgcolor: "headerBackgroundColor")
+        self.HeaderTableView.tableStyle(bgcolor: "headerBackgroundColor")
+        self.HeaderTableView.layer.cornerRadius = 30.0
+        self.HeaderTableView.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMinXMaxYCorner]
+      //  self.img1.downloaded(asset: "360image")
+        
+        //header
         
         // Do any additional setup after loading the view.
         if let data = SurveyData.shared.getCreditTypeConfigurations().productamounts?.enumerated() {
@@ -35,15 +58,18 @@ class ComercialInformalStepOneViewController: UIViewController, AmountCellDelega
             }
         }
         
-        layout.itemSize = CGSize(width: widthCell, height: heightCell)
+        //layout.itemSize = CGSize(width: widthCell, height: heightCell)
         layout.minimumInteritemSpacing = 0
-        layout.minimumLineSpacing = 30
+        layout.minimumLineSpacing = 0
+        collectionView.layer.cornerRadius = 30.0
         collectionView.collectionViewLayout = layout
         collectionView.register(AmountCollectionViewCell.nib(), forCellWithReuseIdentifier: "AmountCollectionViewCell")
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.reloadData()
+       
         continueButton.isEnabled = false
+       
         
     }
     
@@ -54,10 +80,28 @@ class ComercialInformalStepOneViewController: UIViewController, AmountCellDelega
     
     @IBAction func continuePressed(_ sender: UIButton) {
         // TODO: WRITE in singleton element
+        
+       /* print("1")
+        print(SurveyData.shared.productamounts)
         SurveyData.shared.setNeedsConfiguration(productamounts: amountId)
+        print("1")
+        print(SurveyData.shared.productamounts)
         print("Amount ID: \(amountId)")
-        self.performSegue(withIdentifier: "paraQueLoNecesitesSegue", sender: nil)
+        self.performSegue(withIdentifier: "paraQueLoNecesitesSegue", sender: nil)*/
     }
+    
+    //func header
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+     
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "logoCell", for: indexPath) as! HeaderTableViewCell
+        /*cell.imageCell.image = UIImage(named: exercisesList[indexPath.row])*/
+        return cell
+    }
+    
+    //func header
     
     // MARK: - Private Method
     func amountSelected(model: AmountModel) {
@@ -72,7 +116,15 @@ class ComercialInformalStepOneViewController: UIViewController, AmountCellDelega
         }
         
         // Deactivate all cards except other and save in singleton
+        //collectionView.reloadData()
+        print("1")
+        print(SurveyData.shared.productamounts)
+        SurveyData.shared.setNeedsConfiguration(productamounts: amountId)
+        print("2")
+        print(SurveyData.shared.productamounts)
+        print("Amount ID: \(amountId)")
         collectionView.reloadData()
+        self.performSegue(withIdentifier: "paraQueLoNecesitesSegue", sender: nil)
     }
     
     // MARK: - Connection
@@ -112,9 +164,20 @@ extension ComercialInformalStepOneViewController: UICollectionViewDelegateFlowLa
         let totalSpace = layout.sectionInset.left
                 + layout.sectionInset.right
                 + (layout.minimumInteritemSpacing * CGFloat(noOfCellsInRow - 1))
+        
+        let totalSpace2 = layout.sectionInset.left
+                + layout.sectionInset.right
+                + (layout.minimumInteritemSpacing * CGFloat(3))
 
         let size = Int((collectionView.bounds.width - totalSpace) / CGFloat(noOfCellsInRow))
+        print("Ancho_i")
+        print(size)
         
-        return CGSize(width: size, height: heightCell)
+        let alto = Int((collectionView.bounds.height / 4) + totalSpace2)
+        print("Alto_i")
+        print(collectionView.bounds.height)
+        print(alto)
+        
+        return CGSize(width: size, height: alto)
     }
 }

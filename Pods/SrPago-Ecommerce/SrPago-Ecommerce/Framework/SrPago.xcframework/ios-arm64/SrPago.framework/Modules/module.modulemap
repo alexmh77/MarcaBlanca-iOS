@@ -1,0 +1,6 @@
+framework module SrPago {
+  umbrella header "SrPago.h"
+
+  export *
+  module * { export * }
+}

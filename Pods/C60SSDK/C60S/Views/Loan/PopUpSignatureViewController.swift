@@ -8,12 +8,13 @@
 import UIKit
 import SwiftSignatureView
 
-class PopUpSignatureViewController: UIViewController {
+class PopUpSignatureViewController: BaseViewController {
 
     @IBOutlet weak var popUp: UIView!
     @IBOutlet weak var noAccept: UIButton!
     @IBOutlet weak var accept: UIButton!
     
+    @IBOutlet weak var buttonContainer: UIStackView!
     @IBOutlet weak var signatureView: SwiftSignatureView!
     let visualAssets = VisualAssets()
     
@@ -29,6 +30,21 @@ class PopUpSignatureViewController: UIViewController {
         popUp.layer.shadowRadius = 5.0
         popUp.layer.borderWidth = 0.0
         
+        let topBorder = CALayer()
+        topBorder.borderColor = UIColor.gray.cgColor;
+        topBorder.borderWidth = 1;
+        topBorder.frame = CGRect(x: 0, y: 0, width: 250, height: 1)
+        
+        let leftBorder = CALayer()
+        leftBorder.borderColor = UIColor.gray.cgColor;
+        leftBorder.borderWidth = 1;
+        leftBorder.frame = CGRect(x: 0, y: 0, width: 1, height: 46)
+        
+        self.buttonContainer.layer.addSublayer(topBorder)
+        self.accept.layer.addSublayer(leftBorder)
+        
+        
+        
         noAccept.titleLabel?.font = UIFont(name: visualAssets.font, size: visualAssets.fontSize)!
         accept.titleLabel?.font = UIFont(name: visualAssets.font, size: visualAssets.fontSize)!
         
@@ -40,7 +56,9 @@ class PopUpSignatureViewController: UIViewController {
         accept.titleLabel!.minimumScaleFactor = 0.2
         accept.titleLabel!.numberOfLines = 0
         
-        
+        SCSRequests().setTracker(id: 15, orgid: 1, typeid: 15){
+            s in print("RESPUESTA EN TRACKER PANTALLA 15 ####### \(s)")
+        }
         // TODO: Evaluate permissions from user
     }
     

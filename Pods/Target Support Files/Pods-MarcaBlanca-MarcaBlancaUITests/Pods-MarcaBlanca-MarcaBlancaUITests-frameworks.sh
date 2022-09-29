@@ -176,15 +176,7 @@ code_sign_if_enabled() {
 }
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
-  install_framework "${BUILT_PRODUCTS_DIR}/AWSAuthCore/AWSAuthCore.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/AWSCognitoIdentityProvider/AWSCognitoIdentityProvider.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/AWSCognitoIdentityProviderASF/AWSCognitoIdentityProviderASF.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/AWSCore/AWSCore.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/AWSMobileClient/AWSMobileClient.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/AWSPluginsCore/AWSPluginsCore.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/Amplify/Amplify.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/AmplifyPlugins/AmplifyPlugins.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/C60SSDK/C60SSDK.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Material/Material.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Motion/Motion.framework"
@@ -195,6 +187,7 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/ProgressHUD/ProgressHUD.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SwiftKeychainWrapper/SwiftKeychainWrapper.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SwiftSignatureView/SwiftSignatureView.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/iOSDropDown/iOSDropDown.framework"
   install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/C60SSDK/SCSSDKiOS.framework"
   install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/C60SSDK/CredoAppMusic.framework"
   install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/C60SSDK/CredoAppMedia.framework"
@@ -202,17 +195,10 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/C60SSDK/CredoAppContacts.framework"
   install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/C60SSDK/CredoAppCalendarReminders.framework"
   install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/C60SSDK/CredoAppCalendarEvents.framework"
+  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/SrPago-Ecommerce/SrPago.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
-  install_framework "${BUILT_PRODUCTS_DIR}/AWSAuthCore/AWSAuthCore.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/AWSCognitoIdentityProvider/AWSCognitoIdentityProvider.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/AWSCognitoIdentityProviderASF/AWSCognitoIdentityProviderASF.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/AWSCore/AWSCore.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/AWSMobileClient/AWSMobileClient.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/AWSPluginsCore/AWSPluginsCore.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/Amplify/Amplify.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/AmplifyPlugins/AmplifyPlugins.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/C60SSDK/C60SSDK.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Material/Material.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Motion/Motion.framework"
@@ -223,6 +209,7 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/ProgressHUD/ProgressHUD.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SwiftKeychainWrapper/SwiftKeychainWrapper.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SwiftSignatureView/SwiftSignatureView.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/iOSDropDown/iOSDropDown.framework"
   install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/C60SSDK/SCSSDKiOS.framework"
   install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/C60SSDK/CredoAppMusic.framework"
   install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/C60SSDK/CredoAppMedia.framework"
@@ -230,6 +217,7 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/C60SSDK/CredoAppContacts.framework"
   install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/C60SSDK/CredoAppCalendarReminders.framework"
   install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/C60SSDK/CredoAppCalendarEvents.framework"
+  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/SrPago-Ecommerce/SrPago.framework"
 fi
 if [ "${COCOAPODS_PARALLEL_CODE_SIGN}" == "true" ]; then
   wait

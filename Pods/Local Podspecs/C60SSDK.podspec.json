@@ -1,23 +1,23 @@
 {
   "name": "C60SSDK",
   "platforms": {
-    "ios": "13.0"
+    "ios": "15.0"
   },
   "summary": "C60S SDK",
   "requires_arc": true,
-  "version": "0.0.31",
+  "version": "0.1.5",
   "swift_versions": "5.0",
   "license": {
     "type": "MIT",
     "file": "LICENSE"
   },
   "authors": {
-    "FelipeMEndoza": "osiris.ipn@gmail.com"
+    "Prosperas": "dev@prosperas.com"
   },
-  "homepage": "https://github.com/Soluciones-de-Buro-Moviles-S-A-de-C-V/C60S-iOS.git",
+  "homepage": "https://github.com/ProsperasTeam/C60S-iOS.git",
   "source": {
-    "git": "https://github.com/Soluciones-de-Buro-Moviles-S-A-de-C-V/C60S-iOS.git",
-    "tag": "0.0.31"
+    "git": "https://github.com/ProsperasTeam/C60S-iOS.git",
+    "tag": "0.1.5"
   },
   "frameworks": "UIKit",
   "source_files": [
@@ -35,12 +35,6 @@
     ]
   },
   "dependencies": {
-    "Amplify": [
-
-    ],
-    "AmplifyPlugins/AWSCognitoAuthPlugin": [
-
-    ],
     "ProgressHUD": [
 
     ],
@@ -54,12 +48,15 @@
 
     ],
     "Alamofire": [
-      "5.2"
+
     ],
     "PINRemoteImage": [
 
     ],
     "SwiftSignatureView": [
+
+    ],
+    "iOSDropDown": [
 
     ]
   },

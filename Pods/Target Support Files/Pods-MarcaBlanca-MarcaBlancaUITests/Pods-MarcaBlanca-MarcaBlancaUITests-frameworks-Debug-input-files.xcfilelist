@@ -1,13 +1,5 @@
 ${PODS_ROOT}/Target Support Files/Pods-MarcaBlanca-MarcaBlancaUITests/Pods-MarcaBlanca-MarcaBlancaUITests-frameworks.sh
-${BUILT_PRODUCTS_DIR}/AWSAuthCore/AWSAuthCore.framework
-${BUILT_PRODUCTS_DIR}/AWSCognitoIdentityProvider/AWSCognitoIdentityProvider.framework
-${BUILT_PRODUCTS_DIR}/AWSCognitoIdentityProviderASF/AWSCognitoIdentityProviderASF.framework
-${BUILT_PRODUCTS_DIR}/AWSCore/AWSCore.framework
-${BUILT_PRODUCTS_DIR}/AWSMobileClient/AWSMobileClient.framework
-${BUILT_PRODUCTS_DIR}/AWSPluginsCore/AWSPluginsCore.framework
 ${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework
-${BUILT_PRODUCTS_DIR}/Amplify/Amplify.framework
-${BUILT_PRODUCTS_DIR}/AmplifyPlugins/AmplifyPlugins.framework
 ${BUILT_PRODUCTS_DIR}/C60SSDK/C60SSDK.framework
 ${BUILT_PRODUCTS_DIR}/Material/Material.framework
 ${BUILT_PRODUCTS_DIR}/Motion/Motion.framework
@@ -18,6 +10,7 @@ ${BUILT_PRODUCTS_DIR}/PINRemoteImage/PINRemoteImage.framework
 ${BUILT_PRODUCTS_DIR}/ProgressHUD/ProgressHUD.framework
 ${BUILT_PRODUCTS_DIR}/SwiftKeychainWrapper/SwiftKeychainWrapper.framework
 ${BUILT_PRODUCTS_DIR}/SwiftSignatureView/SwiftSignatureView.framework
+${BUILT_PRODUCTS_DIR}/iOSDropDown/iOSDropDown.framework
 ${PODS_XCFRAMEWORKS_BUILD_DIR}/C60SSDK/SCSSDKiOS.framework/SCSSDKiOS
 ${PODS_XCFRAMEWORKS_BUILD_DIR}/C60SSDK/CredoAppMusic.framework/CredoAppMusic
 ${PODS_XCFRAMEWORKS_BUILD_DIR}/C60SSDK/CredoAppMedia.framework/CredoAppMedia
@@ -25,3 +18,4 @@ ${PODS_XCFRAMEWORKS_BUILD_DIR}/C60SSDK/CredoAppCore.framework/CredoAppCore
 ${PODS_XCFRAMEWORKS_BUILD_DIR}/C60SSDK/CredoAppContacts.framework/CredoAppContacts
 ${PODS_XCFRAMEWORKS_BUILD_DIR}/C60SSDK/CredoAppCalendarReminders.framework/CredoAppCalendarReminders
 ${PODS_XCFRAMEWORKS_BUILD_DIR}/C60SSDK/CredoAppCalendarEvents.framework/CredoAppCalendarEvents
+${PODS_XCFRAMEWORKS_BUILD_DIR}/SrPago-Ecommerce/SrPago.framework/SrPago

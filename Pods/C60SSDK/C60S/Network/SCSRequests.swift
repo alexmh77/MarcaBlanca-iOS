@@ -7,12 +7,29 @@
 
 import Foundation
 import Alamofire
-import Amplify
+//import Amplify
 
 struct SCSRequests {
-    let baseURL = "https://mp.securecreditsystems.com/v1/"
-    let apiKey = "044bbc6e-37e1-4e7a-bb64-ba8dc8696dd5"
     
+    //let baseURL = "http://10.135.1.100:8077/v1/"
+    let baseURL = "https://mp.securecreditsystems.com/v1/"
+    //let baseURL = "http://104.215.91.52:8077/v1/" //Madhouse
+    let apiKey = "044bbc6e-37e1-4e7a-bb64-ba8dc8696dd5"
+    //let apiKey = "dev"
+    
+    
+    func setLeadDelivery(leadConfigId:Int,completion: @escaping (UTMModel?)-> ()){
+        let consumerID:String = PersistanceData().getConsumerId()
+        let path = "leaddelivery/verify/\(leadConfigId)/"+consumerID
+        print("path :::: \(path)")
+        let headers : HTTPHeaders = ["x-API-KEY": apiKey]
+        let request = AF.request("\(baseURL)\(path)", method: .get, headers: headers)
+        
+        request.responseDecodable(of: UTMModel.self) { (response) in
+           
+            completion(response.value)
+        }
+    }
     
     func lookUpOrRegister(sessionID: String,completion: @escaping (LookUp?) -> ()){
         
@@ -27,11 +44,17 @@ struct SCSRequests {
         }
     }
     func getConfig(completion: @escaping ([SurveyConfig]?, Colors?) -> ()) {
-        let path = "Config"
+        let locale = self.getLocale()
+       // let path = "Config"
+        let path = "Config/044bbc6e-37e1-4e7a-bb64-ba8dc8696dd5/\(locale)"
         let headers : HTTPHeaders = ["x-API-KEY": apiKey]
         let request = AF.request("\(baseURL)\(path)", method: .get, headers: headers)
         
         request.responseDecodable(of: Survey.self) { (response) in
+            
+            print("estoy dentro de getconfig de scr request")
+            print(response)
+            
             guard let config = response.value?.survey else { return }
             
             guard let colors = response.value?.colors else { return }
@@ -51,6 +74,30 @@ struct SCSRequests {
         }
     }
     
+    func getListingHistory(listingid:String,completion: @escaping (ListingHistory?) -> ())  {
+        let path = "/listing/"+listingid
+        let headers : HTTPHeaders = ["x-API-KEY": apiKey]
+        let request = AF.request("\(baseURL)\(path)", method: .get, headers: headers)
+        
+        
+        request.responseDecodable(of: ListingHistory.self) { (response) in
+            guard let lis = response.value else { return }
+            print("status code listing \(response.response?.statusCode)")
+            completion(lis)
+        }
+    }
+    
+    func getLenderHistory(lenderid:String,completion: @escaping (LenderHistory?) -> ())  {
+        let path = "/lender/"+lenderid
+        let headers : HTTPHeaders = ["x-API-KEY": apiKey]
+        let request = AF.request("\(baseURL)\(path)", method: .get, headers: headers)
+        
+        request.responseDecodable(of: LenderHistory.self) { (response) in
+            guard let lis = response.value else { return }
+            print("status code lender \(response.response?.statusCode)")
+            completion(lis)
+        }
+    }
     
     func getStates(countryId: Int, completion: @escaping ([States]?) -> ())  {
         let path = "state/country/\(countryId)"
@@ -63,6 +110,137 @@ struct SCSRequests {
         }
     }
     
+    func getConsumerEmptyUser(completion: @escaping (ConsumerUser?)-> Void){
+        
+        let path = "consumer/new"
+        let headersdata : HTTPHeaders = ["x-API-KEY": apiKey]
+        
+        
+        AF.request("\(baseURL)\(path)", method:.post, parameters: nil,encoding: JSONEncoding.default,headers: headersdata) .responseDecodable(of: ConsumerUser.self) { (response) in
+            
+            completion(response.value)
+            
+        }
+        
+    }
+    
+    func setFirebaseAndConsumer(consumerid:String,completion: @escaping (String)-> Void){
+        
+        let path = "notify/consumer"
+        let headersdata : HTTPHeaders = ["x-API-KEY": apiKey]
+        let params:[String:Any] = ["consumeruuid": consumerid,
+                                   "firebasetoken": SurveyData.shared.getFirebaseToken()]
+        
+        print("DATA TO SEND FIREBASE######### \(params as Any)")
+        AF.request("\(baseURL)\(path)", method:.post, parameters: params,encoding: JSONEncoding.default,headers: headersdata) .responseDecodable(of: String.self) { (response) in
+            
+            //completion(response.value ?? "")
+            
+            response.response?.statusCode == 200 ? completion("success") : completion("error")
+            
+        }
+        
+    }
+    
+    func setBusiness(nameBusiness:String,description: String,adress: String,seniority:Int,rfc:String,completion: @escaping (String)-> Void){
+        
+        let date = Date()
+        let df = DateFormatter()
+        df.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        let dateString = df.string(from: date)
+        
+        let path = "/business"
+        let headersdata : HTTPHeaders = ["x-API-KEY": apiKey]
+        let params:[String:Any] = ["id":0,
+                                   "consumerid": PersistanceData().getConsumerId() ,
+                                   "name": nameBusiness,
+                                   "description":description,
+                                   "phone":"",
+                                   "address1":adress,
+                                   "address2":"",
+                                   "postalcode":"",
+                                   "stateid":0,
+                                   "countryid":0,
+                                   "seniority":seniority,
+                                   "taxid":rfc,
+                                   "created":dateString,
+                                   "modified":dateString,
+                                   "deleted":dateString]
+        print("se manda esto \(params)")
+        AF.request("\(baseURL)\(path)", method:.post, parameters: params,encoding: JSONEncoding.default,headers: headersdata).responseJSON(completionHandler: { response in
+            response.response?.statusCode == 200 ? completion("success") : completion("error")
+        })
+    }
+    
+    func setListingView(listingId:Int,duration: Int,productId: String,completion: @escaping (String)-> Void){
+        
+        let date = Date()
+        let df = DateFormatter()
+        df.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        let dateString = df.string(from: date)
+        
+        let path = "/listing/view"
+        let headersdata : HTTPHeaders = ["x-API-KEY": apiKey]
+        let params:[String:Any] = ["consumerid": SurveyData.shared.getConsumerId(),
+                                   "listingid": listingId,
+                                   "productid": productId,
+                                   "displayed": dateString,
+                                   "duration": duration]
+        
+        print("DATA TO SEND LISTING VIEW######### \(params as Any)")
+        AF.request("\(baseURL)\(path)", method:.post, parameters: params,encoding: JSONEncoding.default,headers: headersdata) .responseDecodable(of: String.self) { (response) in
+            
+            //completion(response.value ?? "")
+            
+            response.response?.statusCode == 200 ? completion("success") : completion("error")
+            
+        }
+        
+    }
+    
+    func setTracker(id:Int,orgid: Int,typeid: Int,completion: @escaping (String)-> Void){
+        
+        let date = Date()
+        let df = DateFormatter()
+        df.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        let dateString = df.string(from: date)
+        
+        let path = "/tracker"
+        let headersdata : HTTPHeaders = ["x-API-KEY": apiKey]
+        let params:[String:Any] = ["id": id,
+                                   "orgid": orgid,
+                                   "consumerid": SurveyData.shared.getConsumerId(),
+                                   "typeid": typeid,
+                                   "insertdate": dateString]
+        
+        print("DATA TO SEND TRACKER######### \(params as Any)")
+        AF.request("\(baseURL)\(path)", method:.post, parameters: params,encoding: JSONEncoding.default,headers: headersdata) .responseDecodable(of: String.self) { (response) in
+            
+            //completion(response.value ?? "")
+            
+            //print("ERROR en tracker##### \(response.error.debugDescription)")
+            response.response?.statusCode == 200 ? completion("success") : completion("error")
+            
+        }
+        
+    }
+    
+    
+    func updateConsumerUser(data: [String:Any],completion: @escaping (ConsumerUser?)-> Void){
+        
+        let path = "consumer"
+        let headersdata : HTTPHeaders = ["x-API-KEY": apiKey]
+        
+        
+        AF.request("\(baseURL)\(path)", method: .put, parameters: data,encoding: JSONEncoding.default,headers: headersdata) .responseDecodable(of: ConsumerUser.self) { (response) in
+            
+            completion(response.value)
+            
+        }
+        
+    }
+    
+    
     
     func getListingSearch(data: [String: Any], completion: @escaping (Listing?) -> ())  {
         let path = "listing/search"
@@ -70,6 +248,19 @@ struct SCSRequests {
         
         
         AF.request("\(baseURL)\(path)", method:.post, parameters: data,encoding: JSONEncoding.default,headers: headersdata) .responseDecodable(of: Listing.self) { (response) in
+            
+            completion(response.value)
+            
+        }
+        
+    }
+    
+    func saveBusiness(data: [String: Any], completion: @escaping (Business?) -> ())  {
+        let path = "business"
+        let headersdata : HTTPHeaders = ["x-API-KEY": apiKey]
+        
+        
+        AF.request("\(baseURL)\(path)", method:.post, parameters: data,encoding: JSONEncoding.default,headers: headersdata) .responseDecodable(of: Business.self) { (response) in
             
             completion(response.value)
             
@@ -113,6 +304,18 @@ struct SCSRequests {
         }
     }
     
+    func ConsumerByID(data: [String: Any], completion: @escaping (Consumer?,String) -> ()){
+        let path = "consumer/listings/consumerid"
+        let headersdata : HTTPHeaders = ["x-API-KEY": apiKey]
+        
+        print("data \(data)")
+        AF.request("\(baseURL)\(path)", method:.post, parameters: data,encoding: JSONEncoding.default,headers: headersdata) .responseDecodable(of: Consumer.self) { (response) in
+            print(response.result)
+            completion(response.value, response.debugDescription)
+            
+        }
+    }
+    
     func getTermsAndConditions(id: String, completion: @escaping (TermsAndConditions?) -> ()) {
         let path = "termsandconditions/\(id)"
         let headers : HTTPHeaders = ["x-API-KEY": apiKey]
@@ -127,25 +330,131 @@ struct SCSRequests {
     
     
     func saveLogin() {
-        Amplify.Auth.fetchUserAttributes() { result in
-            switch result {
-            case .success(let attributes):
-                
-                for i in attributes {
-                    if (i.key == AuthUserAttributeKey.unknown("sub")) {
-                        print(i.value)
-                        break
-                    }
-                }
-            case .failure(let error):
-                print("Fetching user attributes failed with error \(error)")
-            }
+//        Amplify.Auth.fetchUserAttributes() { result in
+//            switch result {
+//            case .success(let attributes):
+//                
+//                for i in attributes {
+//                    if (i.key == AuthUserAttributeKey.unknown("sub")) {
+//                        print(i.value)
+//                        break
+//                    }
+//                }
+//            case .failure(let error):
+//                print("Fetching user attributes failed with error \(error)")
+//            }
+//        }
+    }
+    func getLocale()-> String{
+        var paisSend = "es-rMX"
+        switch Locale.preferredLanguages[0]{
+        case "es-MX":
+            paisSend = "es-rMX"
+            break
+        case "es-CO":
+            paisSend = "es-rCO"
+            break
+            
+        case "es-PE":
+            paisSend = "es-rPE"
+            break
+            
+        case "en-US":
+            paisSend = "en-rUS"
+            break
+            
+        default:
+            paisSend = "es-rMX"
+            break
         }
+        return paisSend
     }
 }
 
+
+
 // **********************
 // Codables
+
+struct ListingHistory: Codable {
+    let id, productid, lenderid: Int
+    let name, listingHistoryDescription, unitcost: String
+    let currencyid: Int?
+    let tandcid, countryid, stateid, lowscore: Int
+    let highscore: Int
+    let modifydate: String?
+    let createdate: String
+    let deleted: String?
+
+    enum CodingKeys: String, CodingKey {
+        case id, productid, lenderid, name
+        case listingHistoryDescription = "description"
+        case unitcost, currencyid, tandcid, countryid, stateid, lowscore, highscore, modifydate, createdate, deleted
+    }
+}
+
+struct LenderHistory: Codable {
+    let id: Int
+    let name: String
+    let email, phone, website, lenderHistoryDescription: String?
+    let countryid: Int
+    let lowscorethreshold, campaigncostlimit, dailycostlimit, stateid: Int
+    let password, lenderuuid: String?
+    let kycflag: Bool
+    let companyicon: String
+    let s3Bucket: String?
+    let createdate: String
+    let modifydate: String?
+
+    enum CodingKeys: String, CodingKey {
+        case id, name, email, phone, website
+        case lenderHistoryDescription = "description"
+        case countryid, lowscorethreshold, campaigncostlimit, dailycostlimit, stateid, password, lenderuuid, kycflag, companyicon
+        case s3Bucket = "s3bucket"
+        case createdate, modifydate
+    }
+}
+
+struct ConsumerUser: Codable {
+    let created: String?
+    let modified, deleted: String?
+    let id: Int?
+    let name, email, phone, stateid: String?
+    let countryid, password, consumeruuid, firebasetoken: String?
+    let fathersname, mothersname, firstname, secondname: String?
+    let claro360ID: String?
+
+    enum CodingKeys: String, CodingKey {
+        case created, modified, deleted, id, name, email, phone, stateid, countryid, password, consumeruuid, firebasetoken, fathersname, mothersname, firstname, secondname
+        case claro360ID = "claro360id"
+    }
+}
+
+
+struct ConsumerElement: Codable {
+    let id, consumerid, listingid, productid: Int?
+    let unitcost: String?
+    let tandc, tandcsig: String?
+    let tandcsigdate, selected: String?
+    let signatureuri: String?
+    let rejectdate, status: String?
+}
+
+typealias Consumer = [ConsumerElement]
+
+struct Business: Codable {
+    let id, consumerid: Int
+    let name, businessDescription, phone, address1: String
+    let address2, postalcode: String
+    let stateid, countryid: Int
+    let created, modified, deleted: String
+
+    enum CodingKeys: String, CodingKey {
+        case id, consumerid, name
+        case businessDescription = "description"
+        case phone, address1, address2, postalcode, stateid, countryid, created, modified, deleted
+    }
+}
 
 struct ListingsCodableElement: Codable {
     let id, consumerid, listingid, productid: Int?
@@ -173,13 +482,21 @@ struct SigSave: Codable {
     let tandcsig, rejectdate, status: String?
 }
 
+struct UTMModel: Codable {
+    let createdate: String?
+    let id, leadconfigid: Int?
+    let url: String?
+    let consumerid: Int?
+    let modifydate: String?
+}
+
 struct Listing: Codable {
     let top3, all: [All]
 }
 
 
 struct All: Codable {
-    let id, productid, lenderid: Int?
+        let id, productid, lenderid: Int? ,leadconfigid:Int?
         let name, allDescription, unitcost: String?
         let tandcid, countryid, stateid: Int?
         let modifydate: String?
@@ -194,9 +511,11 @@ struct All: Codable {
         let productInterestrate: String?
         let productID, productLowamount, productHighamount, productMinincome: Int?
         let productMaxincome, productLowscore, productHighscore: Int?
+    
+    
 
         enum CodingKeys: String, CodingKey {
-            case id, productid, lenderid, name
+            case id, productid, lenderid, name,leadconfigid
             case allDescription = "description"
             case unitcost, tandcid, countryid, stateid, modifydate, createdate, currencyid, lowscore, highscore, deleted
             case lenderID = "lender.id"
@@ -268,6 +587,7 @@ struct SurveyConfig: Codable {
 struct ProductPurposes: Codable {
     let id: Int?
     let name: String?
+    let icon: String?
     let categoryid: Int?
     let description: String?
 }
@@ -297,6 +617,7 @@ struct ProductAmounts: Codable {
 struct SupportTypes: Codable {
     let id: Int?
     let name: String?
+    let icon: String?
     let categoryid: Int?
     let description: String?
 }
@@ -311,6 +632,7 @@ struct IncomeTypes: Codable {
 
 struct EmploymentTypes: Codable {
     let id: Int?
+    let icon: String?
     let name: String?
     let categoryid: Int?
     let description: String?

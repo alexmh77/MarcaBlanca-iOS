@@ -8,15 +8,26 @@
 import UIKit
 
 
-class KYCInitViewController: UIViewController {
+class KYCInitViewController: BaseViewController {
 
     @IBOutlet weak var dismissButton: UIButton!
     
+    @IBOutlet weak var background: UIImageView!
+    @IBOutlet weak var Continuar: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.background.downloaded(asset: "bodyBackgroundImage", bgcolor: "bodyBackgroundColor" , contentMode: .bottom)
+                
+        self.Continuar.buttonStyle(bgcolor: "buttonBackgroundColor", textcolor: "buttonTextColor", bordercolor: "buttonBackgroundColor")
+        
         overrideUserInterfaceStyle = .light
         // Do any additional setup after loading the view.
         self.dismissButton.setTitle("", for: .normal)
+        SCSRequests().setTracker(id: 11, orgid: 1, typeid: 11){
+            s in print("RESPUESTA EN TRACKER PANTALLA 11 ####### \(s)")
+        }
     }
     
     

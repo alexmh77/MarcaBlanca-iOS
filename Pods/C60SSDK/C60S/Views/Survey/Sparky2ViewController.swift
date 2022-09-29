@@ -10,9 +10,19 @@ import ProgressHUD
 
 class Sparky2ViewController: UIViewController {
 
+    @IBOutlet weak var background: UIImageView!
     let scsRequests = SCSRequests()
     
     override func viewDidLoad() {
+        
+        print("entre a sparky 2")
+        
+        SCSRequests().setTracker(id: 9, orgid: 1, typeid: 9){
+            s in print("RESPUESTA EN TRACKER PANTALLA 9 ####### \(s)")
+        }
+        
+        self.background.downloaded(asset: "bodyBackgroundImage", bgcolor: "bodyBackgroundColor" , contentMode: .scaleAspectFill)
+        
         super.viewDidLoad()
         overrideUserInterfaceStyle = .light
 

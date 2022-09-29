@@ -9,18 +9,45 @@ import UIKit
 import SwiftUI
 import ProgressHUD
 
-class TermsAndConditionsViewController: UIViewController {
+class TermsAndConditionsViewController: BaseViewController,UITableViewDataSource {
     
     @IBOutlet weak var termsTextView: UITextView!
-    @IBOutlet weak var sendToEmail: UIButton!
     @IBOutlet weak var dismissButton: UIButton!
     var signatureImage : UIImage?
     @IBOutlet weak var signatureButton: UIButton!
     let scsRequests = SCSRequests()
     @IBOutlet var viewSignature: UIView!
     
+    @IBOutlet weak var titleBig: UILabel!
+    @IBOutlet weak var background: UIImageView!
+    @IBOutlet weak var Aceptar: UIButton!
+    
+    @IBOutlet weak var HeaderTableView: UITableView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        SCSRequests().setTracker(id: 12, orgid: 1, typeid: 12){
+            s in print("RESPUESTA EN TRACKER PANTALLA 12 ####### \(s)")
+        }
+        self.background.downloaded(asset: "bodyBackgroundImage", bgcolor: "bodyBackgroundColor" , contentMode: .bottom)
+                
+        self.Aceptar.buttonStyle(bgcolor: "buttonBackgroundColor", textcolor: "buttonTextColor", bordercolor: "buttonBackgroundColor")
+        
+        //self.sendToEmail.buttonStyle(bgcolor: "buttonBackgroundColor", textcolor: "buttonTextColor", bordercolor: "buttonBackgroundColor")
+        
+        // header
+        self.HeaderTableView?.tableStyle(bgcolor: "headerBackgroundColor")
+        self.HeaderTableView?.tableStyle(bgcolor: "headerBackgroundColor")
+        self.HeaderTableView?.layer.cornerRadius = 30.0
+        self.HeaderTableView?.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMinXMaxYCorner]
+        //header
+
+        viewSignature.layer.borderWidth = 3
+        viewSignature.layer.borderColor = UIColor.lightGray.cgColor
+        self.titleBig.labelStyle(bgcolor: "", textcolor: "titleTextColor")
+
+        
         overrideUserInterfaceStyle = .light
         print("viewDidLoadTerms")
         if signatureImage != nil {
@@ -51,13 +78,13 @@ class TermsAndConditionsViewController: UIViewController {
             
             SCSRequests().sigSave(data: SurveyData.shared.getSigSaveRequestData()){
                 s in print(s?.signatureuri as Any)
-                SurveyData.shared.productid = (s?.productid)!
+                SurveyData.shared.productid = (s?.productid) ?? 0
                 print(self.convertImageToBase64String(img: self.signatureImage!))
                 self.performSegue(withIdentifier: "accountSettingSegue", sender: nil)
             }
             
         }else{
-            ProgressHUD.showError("Es necesario firma antes de continuar ")
+            ProgressHUD.showError(NSLocalizedString("Es necesario firma antes de continuar", comment: "firmar validacion"))
         }
         
         
@@ -112,5 +139,14 @@ class TermsAndConditionsViewController: UIViewController {
      // Pass the selected object to the new view controller.
      }
      */
+    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+            return 1
+        }
+        
+        public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "logoCell", for: indexPath) as! HeaderTableViewCell
+            return cell
+        }
+
     
 }

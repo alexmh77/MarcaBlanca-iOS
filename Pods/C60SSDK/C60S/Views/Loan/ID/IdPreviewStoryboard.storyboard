@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Camara View Controller-->
+        <scene sceneID="6cZ-NN-go5">
+            <objects>
+                <viewController storyboardIdentifier="camaraid" id="b5K-O4-pll" customClass="CamaraViewController" customModule="C60S" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="UST-VD-dXR">
+                        <rect key="frame" x="0.0" y="0.0" width="340" height="579"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EhS-IW-OTH">
+                                <rect key="frame" x="20" y="27" width="80" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="EZ3-lT-N2C"/>
+                                    <constraint firstAttribute="width" constant="80" id="TTv-HA-CT3"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="arrow_back" title=" "/>
+                            </button>
+                            <view autoresizesSubviews="NO" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="JlH-Pt-olD">
+                                <rect key="frame" x="16" y="148" width="308" height="159"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lounch" translatesAutoresizingMaskIntoConstraints="NO" id="SRM-bl-lG7">
+                                <rect key="frame" x="82" y="27" width="177" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="kgU-IG-pc5"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="mFr-oy-8VT"/>
+                        <color key="backgroundColor" red="0.95297986270000001" green="0.95285135509999996" blue="0.95686465499999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="SRM-bl-lG7" firstAttribute="leading" secondItem="UST-VD-dXR" secondAttribute="leading" constant="82" id="Bx8-cr-Wvu"/>
+                            <constraint firstItem="mFr-oy-8VT" firstAttribute="trailing" secondItem="JlH-Pt-olD" secondAttribute="trailing" constant="16" id="NSb-6q-bXq"/>
+                            <constraint firstItem="EhS-IW-OTH" firstAttribute="leading" secondItem="mFr-oy-8VT" secondAttribute="leading" constant="20" id="TSe-es-tgo"/>
+                            <constraint firstItem="SRM-bl-lG7" firstAttribute="top" secondItem="UST-VD-dXR" secondAttribute="top" constant="27" id="Uce-6k-bq4"/>
+                            <constraint firstAttribute="trailing" secondItem="SRM-bl-lG7" secondAttribute="trailing" constant="81" id="VM8-9B-hqR"/>
+                            <constraint firstItem="JlH-Pt-olD" firstAttribute="leading" secondItem="mFr-oy-8VT" secondAttribute="leading" constant="16" id="emL-Oa-ea9"/>
+                            <constraint firstItem="JlH-Pt-olD" firstAttribute="top" secondItem="EhS-IW-OTH" secondAttribute="bottom" constant="41" id="i5d-SC-PkG"/>
+                            <constraint firstItem="EhS-IW-OTH" firstAttribute="top" secondItem="UST-VD-dXR" secondAttribute="top" constant="27" id="jsb-1x-leq"/>
+                            <constraint firstItem="mFr-oy-8VT" firstAttribute="bottom" secondItem="JlH-Pt-olD" secondAttribute="bottom" constant="272" id="wQh-IH-1DV"/>
+                        </constraints>
+                    </view>
+                    <size key="freeformSize" width="340" height="579"/>
+                    <connections>
+                        <outlet property="backButton" destination="EhS-IW-OTH" id="TvD-0E-ZQD"/>
+                        <outlet property="camaraView" destination="JlH-Pt-olD" id="UPt-Xw-YvG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GK4-Pz-BGB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="844.92753623188412" y="142.29910714285714"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="arrow_back" width="13" height="24"/>
+        <image name="lounch" width="263.5" height="261.5"/>
+    </resources>
+</document>

@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import Amplify
+//import Amplify
 import Material
 import ProgressHUD
 
@@ -20,6 +20,10 @@ class OTPViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         backButton.setTitle("", for: .normal)
+        
+        SCSRequests().setTracker(id: 22, orgid: 22, typeid: 22){
+            s in print("RESPUESTA EN TRACKER PANTALLA 22 ####### \(s)")
+        }
     }
     
     
@@ -33,7 +37,7 @@ class OTPViewController: UIViewController {
     
     
     func confirmSignIn() {
-        Amplify.Auth.confirmSignIn(challengeResponse: otpCode.text!) { result in
+        /*Amplify.Auth.confirmSignIn(challengeResponse: otpCode.text!) { result in
             switch result {
             case .success(let signInResult):
                 print("Confirm sign in succeeded. Next step: \(signInResult.nextStep)")
@@ -46,7 +50,7 @@ class OTPViewController: UIViewController {
                     ProgressHUD.showError("Error en inicio de sesion")
                 }
             }
-        }
+        }*/
     }
     
     /*

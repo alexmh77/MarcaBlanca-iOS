@@ -30,6 +30,9 @@ class MonthlyIncomeTableViewCell: UITableViewCell {
 
         let tap = UITapGestureRecognizer(target: self, action: #selector(self.handleTap(_:)))
         card.addGestureRecognizer(tap)
+        self.titleLabel.labelStyle(bgcolor: "", textcolor: "cardTitleColor")
+        
+        
     }
 
     
@@ -41,14 +44,16 @@ class MonthlyIncomeTableViewCell: UITableViewCell {
     func setModel(model: MonthlyIncomeModel) {
         self.model = model
         titleLabel.text = model.description
-        card.layer.borderColor = VisualAssets().colorNameLightBlue.cgColor
+        card.layer.borderColor = UIColor.white.cgColor
+        card.layer.borderWidth = 1.5
         if model.status {
             card.layer.borderColor = VisualAssets().colorNameLightBlue.cgColor
+            card.layer.cornerRadius = 15
             card.layer.shadowColor = UIColor.black.cgColor
-            card.layer.backgroundColor = VisualAssets().colorNameLightBlue.cgColor
-            self.titleLabel.textColor = .white
+            //card.layer.backgroundColor = VisualAssets().colorNameLightBlue.cgColor
+            //self.titleLabel.textColor = .white
         } else {
-            card.layer.cornerRadius = 30
+            card.layer.cornerRadius = 15
             card.layer.shadowColor = UIColor.black.cgColor
             card.layer.shadowOffset = CGSize(width: 2, height: 2)
             card.layer.shadowOpacity = 0.3

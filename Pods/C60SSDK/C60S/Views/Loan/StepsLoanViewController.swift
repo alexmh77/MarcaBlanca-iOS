@@ -8,7 +8,7 @@
 import UIKit
 import Material
 
-class StepsLoanViewController: UIViewController {
+class StepsLoanViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource  {
 
     @IBOutlet weak var dismissButton: UIButton!
     @IBOutlet weak var identityView: UIView!
@@ -19,12 +19,20 @@ class StepsLoanViewController: UIViewController {
     @IBOutlet weak var accountRadioButton: RadioButton!
     @IBOutlet weak var titlePresentationLabel: UILabel!
     
+    @IBOutlet weak var instructionsLabel: UILabel!
+    @IBOutlet weak var background: UIImageView!
+    @IBOutlet weak var Continuar: UIButton!
+    @IBOutlet weak var HeaderTableView: UITableView!
+    
     var kycStatus: Bool = false // TODO: Dynamic for each user
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         
-        titlePresentationLabel.text = "Hola \(SurveyData.shared.getName()), en  \(SurveyData.shared.getListBank()) queremos conocerte"
+        let hola = NSLocalizedString("Hola", comment: "Hola")
+        let en = NSLocalizedString("en", comment: "en")
+        let queremos = NSLocalizedString("queremos conocerlo", comment: "conocerlo")
+        titlePresentationLabel.text = "\(hola) \(SurveyData.shared.getName()), \(en)  \(SurveyData.shared.getListBank()) \(queremos)"
         
         
         
@@ -32,6 +40,19 @@ class StepsLoanViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("Aqui entre al loan view controller")
+        self.background.downloaded(asset: "bodyBackgroundImage", bgcolor: "bodyBackgroundColor" , contentMode: .bottom)
+        
+        self.Continuar.buttonStyle(bgcolor: "buttonBackgroundColor", textcolor: "buttonTextColor", bordercolor: "buttonBackgroundColor")
+        // header
+        self.HeaderTableView?.tableStyle(bgcolor: "headerBackgroundColor")
+        self.HeaderTableView?.layer.cornerRadius = 30.0
+        self.HeaderTableView?.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMinXMaxYCorner]
+        //header
+        
+        self.titlePresentationLabel.labelStyle(bgcolor: "", textcolor: "titleTextColor")
+        self.instructionsLabel.labelStyle(bgcolor: "", textcolor: "bodyTextColor")
+        
         overrideUserInterfaceStyle = .light
         // Do any additional setup after loading the view.
         dismissButton.setTitle("", for: .normal)
@@ -47,7 +68,25 @@ class StepsLoanViewController: UIViewController {
         } else {
             identityView.isHidden = true
         }
+        
+        SCSRequests().setTracker(id: 10, orgid: 1, typeid: 10){
+            s in print("RESPUESTA EN TRACKER PANTALLA 10 ####### \(s)")
+        }
     }
+    
+    //func header
+    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+     
+    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "logoCell", for: indexPath) as! HeaderTableViewCell
+        /*cell.imageCell.image = UIImage(named: exercisesList[indexPath.row])*/
+       // cell.backgroundColor = UIColor.black
+        return cell
+    }
+    
+    //func header
     
     
     func setShadowInView(view: UIView) {
@@ -62,16 +101,18 @@ class StepsLoanViewController: UIViewController {
     
 
     @IBAction func dismissPressed(_ sender: UIButton) {
+        print("entro a regresar")
         self.dismiss(animated: true, completion: nil)
     }
     
     
     @IBAction func continuePressed(_ sender: UIButton) {
-        if kycStatus ?? false {
-            self.performSegue(withIdentifier: "kycSegue", sender: nil)
-        } else {
-            self.performSegue(withIdentifier: "termsandconditionswithoutKYC", sender: nil)
-        }
-        
+//        if kycStatus ?? false {
+//            self.performSegue(withIdentifier: "kycSegue", sender: nil)
+//        } else {
+//            self.performSegue(withIdentifier: "termsandconditionswithoutKYC", sender: nil)
+//        }
+        self.performSegue(withIdentifier: "termsandconditionswithoutKYC", sender: nil)
     }
+    
 }

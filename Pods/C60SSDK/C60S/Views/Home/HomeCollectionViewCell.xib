@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="homeCell" id="gTV-IL-0wX" customClass="HomeCollectionViewCell" customModule="C60S" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="343" height="76"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="343" height="76"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nx4-hD-CtR" customClass="customCardRequest" customModule="C60S" customModuleProvider="target">
+                        <rect key="frame" x="15" y="0.0" width="313" height="76"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$5000" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CoL-OV-CMd">
+                                <rect key="frame" x="111" y="20" width="92" height="37"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pendiente" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7W2-GC-NYz">
+                                <rect key="frame" x="219" y="19" width="79" height="37"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="79" id="2e8-9c-dR8"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
+                                <color key="textColor" name="AppPurpleColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="C60Sicon" translatesAutoresizingMaskIntoConstraints="NO" id="Hln-71-OmJ">
+                                <rect key="frame" x="8" y="15" width="95" height="46"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="95" id="Bvf-RX-3on"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="CoL-OV-CMd" secondAttribute="trailing" constant="110" id="3me-ce-5uE"/>
+                            <constraint firstAttribute="bottom" secondItem="Hln-71-OmJ" secondAttribute="bottom" constant="15" id="CdJ-wE-pMl"/>
+                            <constraint firstAttribute="trailing" secondItem="7W2-GC-NYz" secondAttribute="trailing" constant="15" id="CwU-rJ-IkH"/>
+                            <constraint firstItem="CoL-OV-CMd" firstAttribute="top" secondItem="nx4-hD-CtR" secondAttribute="top" constant="20" symbolic="YES" id="KfJ-Az-jqM"/>
+                            <constraint firstItem="Hln-71-OmJ" firstAttribute="top" secondItem="nx4-hD-CtR" secondAttribute="top" constant="15" id="PgV-D5-43S"/>
+                            <constraint firstAttribute="bottom" secondItem="7W2-GC-NYz" secondAttribute="bottom" constant="20" symbolic="YES" id="eXC-qS-ZxR"/>
+                            <constraint firstItem="CoL-OV-CMd" firstAttribute="leading" secondItem="nx4-hD-CtR" secondAttribute="leading" constant="111" id="gGP-zK-hTS"/>
+                            <constraint firstItem="Hln-71-OmJ" firstAttribute="leading" secondItem="nx4-hD-CtR" secondAttribute="leading" constant="8" id="jlN-VL-cB6"/>
+                            <constraint firstItem="7W2-GC-NYz" firstAttribute="top" secondItem="nx4-hD-CtR" secondAttribute="top" constant="19" id="qGa-nL-JWC"/>
+                            <constraint firstAttribute="bottom" secondItem="CoL-OV-CMd" secondAttribute="bottom" constant="19" id="xCf-oH-paU"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="nx4-hD-CtR" secondAttribute="bottom" id="4dU-AR-Mfk"/>
+                <constraint firstItem="nx4-hD-CtR" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="51v-yD-yrb"/>
+                <constraint firstItem="nx4-hD-CtR" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="15" id="Gob-RM-AQp"/>
+                <constraint firstAttribute="trailing" secondItem="nx4-hD-CtR" secondAttribute="trailing" constant="15" id="n71-EH-wOb"/>
+            </constraints>
+            <size key="customSize" width="269" height="81"/>
+            <connections>
+                <outlet property="amountLabel" destination="CoL-OV-CMd" id="sGx-ZR-FyK"/>
+                <outlet property="cardView" destination="nx4-hD-CtR" id="tei-E4-Ttz"/>
+                <outlet property="productImage" destination="Hln-71-OmJ" id="0TJ-32-pfY"/>
+                <outlet property="statusLabel" destination="7W2-GC-NYz" id="PCj-m6-YBQ"/>
+            </connections>
+            <point key="canvasLocation" x="289.13043478260875" y="105.80357142857143"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="C60Sicon" width="527" height="523"/>
+        <namedColor name="AppPurpleColor">
+            <color red="0.57300001382827759" green="0.55299997329711914" blue="0.95300000905990601" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

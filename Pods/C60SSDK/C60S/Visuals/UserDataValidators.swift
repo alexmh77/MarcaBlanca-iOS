@@ -29,7 +29,7 @@ class UserDataValidators {
     //validate name logic
     func isValid(name: String) -> Bool {
         //Declaring the rule of characters to be used. Applying rule to current state. Verifying the result.
-        let regex = "[A-Za-z]{2,}"
+        let regex = "(?<! )[-a-zA-Z' ]{2,26}"
         let test = NSPredicate(format: "SELF MATCHES %@", regex)
         let result = test.evaluate(with: name)
         
